@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8f732bbbbb2c44cead12a602c6854a4f" Name="Diagram1">
+        <EntityTypeShape EntityType="OtaghMan_DBModel.Equipment_tbl" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtaghMan_DBModel.Rooms_tbl" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtaghMan_DBModel.Storages_tbl" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="OtaghMan_DBModel.Equipment_To_Storages" ManuallyRouted="false" />
+        <AssociationConnector Association="OtaghMan_DBModel.Storages_To_Rooms" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="OtaghMan_DBModel.Users_tbl" Width="1.5" PointX="3.375" PointY="4.25" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

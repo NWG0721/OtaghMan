@@ -14,6 +14,10 @@ namespace OtaghMan.Data.Repositories
 
         Users_tbl GetUserByID(int userid);
 
+        Users_tbl IsHere(string userName, string userPass);
+        Users_tbl IsHere(string userName);
+
+
         //------------------------------| SELECT |------------------------------//
 
         //------------------------------| INSERT |------------------------------//

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Security.Cryptography.Xml;
 
 namespace OtaghMan.Data.Services
 {
@@ -82,6 +83,15 @@ namespace OtaghMan.Data.Services
             {
                 return false;
             }
+        }
+        public Users_tbl IsHere(string userName, string userPass)
+        {
+            return db.Users_tbl.Where(n => n.USER_USERNAME == userName && n.USER_PASSWORD == userPass).SingleOrDefault();
+        }
+
+        public Users_tbl IsHere(string userName)
+        {
+            return db.Users_tbl.Where(n => n.USER_USERNAME == userName).SingleOrDefault();
         }
     }
 }

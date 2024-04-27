@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -154,6 +155,7 @@ namespace OtaghMan.App
 
                                 db.UsersRopository.SaveChanges();
                                 MessageBox.Show("اضافه شدی جون دل", "کار دراومد کیومرث", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                Thread.Sleep(2000);
                                 this.Hide();
                                 main.Show();
                             }

@@ -1,4 +1,4 @@
-﻿namespace OtaghMan.App.Forms
+﻿namespace OtaghMan.App
 {
     partial class frmMain
     {
@@ -30,30 +30,37 @@
         {
             AltoControls.AltoButton btnHeader;
             this.panHead = new System.Windows.Forms.Panel();
-            this.wiLBiTRoundedPictureBox21 = new WiLBiT.WiLBiTRoundedPictureBox2();
+            this.picAppIcon = new WiLBiT.WiLBiTRoundedPictureBox2();
             this.btnMinimize = new AltoControls.AltoButton();
             this.btnExit = new AltoControls.AltoButton();
             this.panMenu = new System.Windows.Forms.Panel();
-            this.tableGrid = new System.Windows.Forms.TableLayoutPanel();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.splitter3 = new System.Windows.Forms.Splitter();
+            this.splitter4 = new System.Windows.Forms.Splitter();
+            this.splitter5 = new System.Windows.Forms.Splitter();
+            this.panContaner = new System.Windows.Forms.Panel();
+            this.panRoom = new WiLBiT.WiLBiTGradientPanel();
+            this.lblManageRoom = new WiLBiT.WiLBiTButton();
+            this.lblOwner = new System.Windows.Forms.Label();
+            this.lblRoomName = new System.Windows.Forms.Label();
+            this.picRoom = new System.Windows.Forms.PictureBox();
+            this.splitter6 = new System.Windows.Forms.Splitter();
             this.wiLBiTGradientPanel1 = new WiLBiT.WiLBiTGradientPanel();
+            this.wiLBiTButton1 = new WiLBiT.WiLBiTButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             btnHeader = new AltoControls.AltoButton();
             this.panHead.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wiLBiTRoundedPictureBox21)).BeginInit();
-            this.tableGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).BeginInit();
+            this.panMenu.SuspendLayout();
+            this.panContaner.SuspendLayout();
+            this.panRoom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).BeginInit();
+            this.wiLBiTGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panHead
-            // 
-            this.panHead.BackColor = System.Drawing.Color.Transparent;
-            this.panHead.Controls.Add(btnHeader);
-            this.panHead.Controls.Add(this.wiLBiTRoundedPictureBox21);
-            this.panHead.Controls.Add(this.btnMinimize);
-            this.panHead.Controls.Add(this.btnExit);
-            this.panHead.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panHead.Location = new System.Drawing.Point(0, 0);
-            this.panHead.Name = "panHead";
-            this.panHead.Size = new System.Drawing.Size(1160, 35);
-            this.panHead.TabIndex = 1;
             // 
             // btnHeader
             // 
@@ -69,28 +76,42 @@
             btnHeader.Location = new System.Drawing.Point(35, 0);
             btnHeader.Name = "btnHeader";
             btnHeader.Radius = 10;
-            btnHeader.Size = new System.Drawing.Size(1055, 35);
+            btnHeader.Size = new System.Drawing.Size(747, 35);
             btnHeader.Stroke = false;
             btnHeader.StrokeColor = System.Drawing.Color.Gray;
             btnHeader.TabIndex = 4;
             btnHeader.Text = "Otagh-e Man";
             btnHeader.Transparency = false;
+            btnHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
             // 
-            // wiLBiTRoundedPictureBox21
+            // panHead
             // 
-            this.wiLBiTRoundedPictureBox21.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.wiLBiTRoundedPictureBox21.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.wiLBiTRoundedPictureBox21.BorderColor2 = System.Drawing.Color.HotPink;
-            this.wiLBiTRoundedPictureBox21.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.wiLBiTRoundedPictureBox21.BorderSize = 2;
-            this.wiLBiTRoundedPictureBox21.Dock = System.Windows.Forms.DockStyle.Left;
-            this.wiLBiTRoundedPictureBox21.GradientAngle = 50F;
-            this.wiLBiTRoundedPictureBox21.Location = new System.Drawing.Point(0, 0);
-            this.wiLBiTRoundedPictureBox21.Name = "wiLBiTRoundedPictureBox21";
-            this.wiLBiTRoundedPictureBox21.Size = new System.Drawing.Size(35, 35);
-            this.wiLBiTRoundedPictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.wiLBiTRoundedPictureBox21.TabIndex = 1;
-            this.wiLBiTRoundedPictureBox21.TabStop = false;
+            this.panHead.BackColor = System.Drawing.Color.Transparent;
+            this.panHead.Controls.Add(btnHeader);
+            this.panHead.Controls.Add(this.picAppIcon);
+            this.panHead.Controls.Add(this.btnMinimize);
+            this.panHead.Controls.Add(this.btnExit);
+            this.panHead.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panHead.Location = new System.Drawing.Point(0, 0);
+            this.panHead.Name = "panHead";
+            this.panHead.Size = new System.Drawing.Size(852, 35);
+            this.panHead.TabIndex = 1;
+            // 
+            // picAppIcon
+            // 
+            this.picAppIcon.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.picAppIcon.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.picAppIcon.BorderColor2 = System.Drawing.Color.HotPink;
+            this.picAppIcon.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.picAppIcon.BorderSize = 2;
+            this.picAppIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picAppIcon.GradientAngle = 50F;
+            this.picAppIcon.Location = new System.Drawing.Point(0, 0);
+            this.picAppIcon.Name = "picAppIcon";
+            this.picAppIcon.Size = new System.Drawing.Size(35, 35);
+            this.picAppIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAppIcon.TabIndex = 1;
+            this.picAppIcon.TabStop = false;
             // 
             // btnMinimize
             // 
@@ -103,7 +124,7 @@
             this.btnMinimize.ForeColor = System.Drawing.Color.Black;
             this.btnMinimize.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnMinimize.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnMinimize.Location = new System.Drawing.Point(1090, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(782, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Radius = 10;
             this.btnMinimize.Size = new System.Drawing.Size(35, 35);
@@ -112,6 +133,7 @@
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.Text = "_";
             this.btnMinimize.Transparency = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnExit
             // 
@@ -124,7 +146,7 @@
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Inactive1 = System.Drawing.Color.Red;
             this.btnExit.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnExit.Location = new System.Drawing.Point(1125, 0);
+            this.btnExit.Location = new System.Drawing.Point(817, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Radius = 10;
             this.btnExit.Size = new System.Drawing.Size(35, 35);
@@ -133,71 +155,244 @@
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "✕";
             this.btnExit.Transparency = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panMenu
             // 
             this.panMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
+            this.panMenu.Controls.Add(this.splitter3);
             this.panMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panMenu.Location = new System.Drawing.Point(0, 35);
             this.panMenu.Name = "panMenu";
-            this.panMenu.Size = new System.Drawing.Size(1160, 48);
+            this.panMenu.Size = new System.Drawing.Size(852, 48);
             this.panMenu.TabIndex = 2;
             // 
-            // tableGrid
+            // splitter1
             // 
-            this.tableGrid.AutoScroll = true;
-            this.tableGrid.ColumnCount = 9;
-            this.tableGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableGrid.Controls.Add(this.wiLBiTGradientPanel1, 7, 1);
-            this.tableGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableGrid.Location = new System.Drawing.Point(0, 83);
-            this.tableGrid.Name = "tableGrid";
-            this.tableGrid.RowCount = 5;
-            this.tableGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableGrid.Size = new System.Drawing.Size(1160, 597);
-            this.tableGrid.TabIndex = 3;
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter1.Location = new System.Drawing.Point(802, 83);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(50, 556);
+            this.splitter1.TabIndex = 3;
+            this.splitter1.TabStop = false;
+            // 
+            // splitter2
+            // 
+            this.splitter2.Location = new System.Drawing.Point(0, 83);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(50, 556);
+            this.splitter2.TabIndex = 6;
+            this.splitter2.TabStop = false;
+            // 
+            // splitter3
+            // 
+            this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitter3.Location = new System.Drawing.Point(0, 0);
+            this.splitter3.Name = "splitter3";
+            this.splitter3.Size = new System.Drawing.Size(852, 52);
+            this.splitter3.TabIndex = 9;
+            this.splitter3.TabStop = false;
+            // 
+            // splitter4
+            // 
+            this.splitter4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitter4.Location = new System.Drawing.Point(50, 83);
+            this.splitter4.Name = "splitter4";
+            this.splitter4.Size = new System.Drawing.Size(752, 60);
+            this.splitter4.TabIndex = 7;
+            this.splitter4.TabStop = false;
+            // 
+            // splitter5
+            // 
+            this.splitter5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitter5.Location = new System.Drawing.Point(50, 579);
+            this.splitter5.Name = "splitter5";
+            this.splitter5.Size = new System.Drawing.Size(752, 60);
+            this.splitter5.TabIndex = 8;
+            this.splitter5.TabStop = false;
+            // 
+            // panContaner
+            // 
+            this.panContaner.AutoScroll = true;
+            this.panContaner.Controls.Add(this.wiLBiTGradientPanel1);
+            this.panContaner.Controls.Add(this.splitter6);
+            this.panContaner.Controls.Add(this.panRoom);
+            this.panContaner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panContaner.Location = new System.Drawing.Point(50, 143);
+            this.panContaner.Name = "panContaner";
+            this.panContaner.Size = new System.Drawing.Size(752, 436);
+            this.panContaner.TabIndex = 11;
+            // 
+            // panRoom
+            // 
+            this.panRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.panRoom.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
+            this.panRoom.BorderColor = System.Drawing.Color.Peru;
+            this.panRoom.BorderRadius = 15;
+            this.panRoom.BorderSize = 2;
+            this.panRoom.Controls.Add(this.lblManageRoom);
+            this.panRoom.Controls.Add(this.lblOwner);
+            this.panRoom.Controls.Add(this.lblRoomName);
+            this.panRoom.Controls.Add(this.picRoom);
+            this.panRoom.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panRoom.ForeColor = System.Drawing.Color.Peru;
+            this.panRoom.Location = new System.Drawing.Point(0, 0);
+            this.panRoom.Name = "panRoom";
+            this.panRoom.Size = new System.Drawing.Size(383, 419);
+            this.panRoom.TabIndex = 4;
+            // 
+            // lblManageRoom
+            // 
+            this.lblManageRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
+            this.lblManageRoom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.lblManageRoom.BorderRadius = 15;
+            this.lblManageRoom.BorderSize = 2;
+            this.lblManageRoom.FlatAppearance.BorderSize = 0;
+            this.lblManageRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblManageRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.lblManageRoom.Location = new System.Drawing.Point(15, 349);
+            this.lblManageRoom.Name = "lblManageRoom";
+            this.lblManageRoom.Size = new System.Drawing.Size(210, 51);
+            this.lblManageRoom.TabIndex = 5;
+            this.lblManageRoom.Text = "Manage";
+            this.lblManageRoom.UseVisualStyleBackColor = false;
+            // 
+            // lblOwner
+            // 
+            this.lblOwner.AutoSize = true;
+            this.lblOwner.BackColor = System.Drawing.Color.Transparent;
+            this.lblOwner.Font = new System.Drawing.Font("B Koodak", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblOwner.Location = new System.Drawing.Point(278, 303);
+            this.lblOwner.Name = "lblOwner";
+            this.lblOwner.Size = new System.Drawing.Size(78, 36);
+            this.lblOwner.TabIndex = 4;
+            this.lblOwner.Text = "مال فلانی";
+            // 
+            // lblRoomName
+            // 
+            this.lblRoomName.AutoSize = true;
+            this.lblRoomName.BackColor = System.Drawing.Color.Transparent;
+            this.lblRoomName.Font = new System.Drawing.Font("B Koodak", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblRoomName.Location = new System.Drawing.Point(313, 247);
+            this.lblRoomName.Name = "lblRoomName";
+            this.lblRoomName.Size = new System.Drawing.Size(43, 36);
+            this.lblRoomName.TabIndex = 3;
+            this.lblRoomName.Text = "اتاق";
+            // 
+            // picRoom
+            // 
+            this.picRoom.BackColor = System.Drawing.Color.Silver;
+            this.picRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picRoom.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picRoom.Location = new System.Drawing.Point(0, 0);
+            this.picRoom.Name = "picRoom";
+            this.picRoom.Size = new System.Drawing.Size(383, 228);
+            this.picRoom.TabIndex = 1;
+            this.picRoom.TabStop = false;
+            // 
+            // splitter6
+            // 
+            this.splitter6.Location = new System.Drawing.Point(383, 0);
+            this.splitter6.Name = "splitter6";
+            this.splitter6.Size = new System.Drawing.Size(19, 419);
+            this.splitter6.TabIndex = 9;
+            this.splitter6.TabStop = false;
             // 
             // wiLBiTGradientPanel1
             // 
             this.wiLBiTGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
             this.wiLBiTGradientPanel1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
-            this.wiLBiTGradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.wiLBiTGradientPanel1.BorderRadius = 20;
+            this.wiLBiTGradientPanel1.BorderColor = System.Drawing.Color.Peru;
+            this.wiLBiTGradientPanel1.BorderRadius = 15;
             this.wiLBiTGradientPanel1.BorderSize = 2;
-            this.wiLBiTGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wiLBiTGradientPanel1.ForeColor = System.Drawing.Color.White;
-            this.wiLBiTGradientPanel1.Location = new System.Drawing.Point(872, 8);
+            this.wiLBiTGradientPanel1.Controls.Add(this.wiLBiTButton1);
+            this.wiLBiTGradientPanel1.Controls.Add(this.label1);
+            this.wiLBiTGradientPanel1.Controls.Add(this.label2);
+            this.wiLBiTGradientPanel1.Controls.Add(this.pictureBox1);
+            this.wiLBiTGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.wiLBiTGradientPanel1.ForeColor = System.Drawing.Color.Peru;
+            this.wiLBiTGradientPanel1.Location = new System.Drawing.Point(402, 0);
             this.wiLBiTGradientPanel1.Name = "wiLBiTGradientPanel1";
-            this.wiLBiTGradientPanel1.Size = new System.Drawing.Size(277, 285);
-            this.wiLBiTGradientPanel1.TabIndex = 0;
+            this.wiLBiTGradientPanel1.Size = new System.Drawing.Size(383, 419);
+            this.wiLBiTGradientPanel1.TabIndex = 10;
+            // 
+            // wiLBiTButton1
+            // 
+            this.wiLBiTButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
+            this.wiLBiTButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.wiLBiTButton1.BorderRadius = 15;
+            this.wiLBiTButton1.BorderSize = 2;
+            this.wiLBiTButton1.FlatAppearance.BorderSize = 0;
+            this.wiLBiTButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.wiLBiTButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wiLBiTButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.wiLBiTButton1.Location = new System.Drawing.Point(15, 349);
+            this.wiLBiTButton1.Name = "wiLBiTButton1";
+            this.wiLBiTButton1.Size = new System.Drawing.Size(210, 51);
+            this.wiLBiTButton1.TabIndex = 5;
+            this.wiLBiTButton1.Text = "Manage";
+            this.wiLBiTButton1.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("B Koodak", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label1.Location = new System.Drawing.Point(278, 303);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 36);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "مال فلانی";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("B Koodak", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label2.Location = new System.Drawing.Point(313, 247);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 36);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "اتاق";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(383, 228);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
-            this.ClientSize = new System.Drawing.Size(1160, 680);
-            this.Controls.Add(this.tableGrid);
+            this.ClientSize = new System.Drawing.Size(852, 639);
+            this.Controls.Add(this.panContaner);
+            this.Controls.Add(this.splitter5);
+            this.Controls.Add(this.splitter4);
+            this.Controls.Add(this.splitter2);
+            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panMenu);
             this.Controls.Add(this.panHead);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
             this.Text = "frmMain";
             this.panHead.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.wiLBiTRoundedPictureBox21)).EndInit();
-            this.tableGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).EndInit();
+            this.panMenu.ResumeLayout(false);
+            this.panContaner.ResumeLayout(false);
+            this.panRoom.ResumeLayout(false);
+            this.panRoom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoom)).EndInit();
+            this.wiLBiTGradientPanel1.ResumeLayout(false);
+            this.wiLBiTGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,11 +400,26 @@
         #endregion
 
         private System.Windows.Forms.Panel panHead;
-        private WiLBiT.WiLBiTRoundedPictureBox2 wiLBiTRoundedPictureBox21;
+        private WiLBiT.WiLBiTRoundedPictureBox2 picAppIcon;
         private AltoControls.AltoButton btnMinimize;
         private AltoControls.AltoButton btnExit;
         private System.Windows.Forms.Panel panMenu;
-        private System.Windows.Forms.TableLayoutPanel tableGrid;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Splitter splitter2;
+        private System.Windows.Forms.Splitter splitter3;
+        private System.Windows.Forms.Splitter splitter4;
+        private System.Windows.Forms.Splitter splitter5;
+        private System.Windows.Forms.Panel panContaner;
+        private WiLBiT.WiLBiTGradientPanel panRoom;
+        private WiLBiT.WiLBiTButton lblManageRoom;
+        private System.Windows.Forms.Label lblOwner;
+        private System.Windows.Forms.Label lblRoomName;
+        private System.Windows.Forms.PictureBox picRoom;
         private WiLBiT.WiLBiTGradientPanel wiLBiTGradientPanel1;
+        private WiLBiT.WiLBiTButton wiLBiTButton1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Splitter splitter6;
     }
 }

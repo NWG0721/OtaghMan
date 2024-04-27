@@ -1,5 +1,4 @@
-﻿using OtaghMan.App.Forms;
-using OtaghMan.Data;
+﻿using OtaghMan.Data;
 using OtaghMan.Data.Context;
 using System;
 using System.Collections.Generic;
@@ -124,6 +123,7 @@ namespace OtaghMan.App
                     else
                     {
                         lblBadUserPass.Visible = false;
+                        Thread.Sleep(2000);
                         this.Hide();
                         main.Show();
                     }

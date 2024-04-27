@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OtaghMan.Data.Repositories;
 using System.Data.Entity;
 
 namespace OtaghMan.Data.Services

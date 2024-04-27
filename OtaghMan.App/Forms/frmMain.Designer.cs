@@ -46,11 +46,6 @@
             this.lblRoomName = new System.Windows.Forms.Label();
             this.picRoom = new System.Windows.Forms.PictureBox();
             this.splitter6 = new System.Windows.Forms.Splitter();
-            this.wiLBiTGradientPanel1 = new WiLBiT.WiLBiTGradientPanel();
-            this.wiLBiTButton1 = new WiLBiT.WiLBiTButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             btnHeader = new AltoControls.AltoButton();
             this.panHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).BeginInit();
@@ -58,8 +53,6 @@
             this.panContaner.SuspendLayout();
             this.panRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom)).BeginInit();
-            this.wiLBiTGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHeader
@@ -214,7 +207,6 @@
             // panContaner
             // 
             this.panContaner.AutoScroll = true;
-            this.panContaner.Controls.Add(this.wiLBiTGradientPanel1);
             this.panContaner.Controls.Add(this.splitter6);
             this.panContaner.Controls.Add(this.panRoom);
             this.panContaner.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -238,7 +230,7 @@
             this.panRoom.ForeColor = System.Drawing.Color.Peru;
             this.panRoom.Location = new System.Drawing.Point(0, 0);
             this.panRoom.Name = "panRoom";
-            this.panRoom.Size = new System.Drawing.Size(383, 419);
+            this.panRoom.Size = new System.Drawing.Size(383, 436);
             this.panRoom.TabIndex = 4;
             // 
             // lblManageRoom
@@ -295,77 +287,9 @@
             // 
             this.splitter6.Location = new System.Drawing.Point(383, 0);
             this.splitter6.Name = "splitter6";
-            this.splitter6.Size = new System.Drawing.Size(19, 419);
+            this.splitter6.Size = new System.Drawing.Size(19, 436);
             this.splitter6.TabIndex = 9;
             this.splitter6.TabStop = false;
-            // 
-            // wiLBiTGradientPanel1
-            // 
-            this.wiLBiTGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
-            this.wiLBiTGradientPanel1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
-            this.wiLBiTGradientPanel1.BorderColor = System.Drawing.Color.Peru;
-            this.wiLBiTGradientPanel1.BorderRadius = 15;
-            this.wiLBiTGradientPanel1.BorderSize = 2;
-            this.wiLBiTGradientPanel1.Controls.Add(this.wiLBiTButton1);
-            this.wiLBiTGradientPanel1.Controls.Add(this.label1);
-            this.wiLBiTGradientPanel1.Controls.Add(this.label2);
-            this.wiLBiTGradientPanel1.Controls.Add(this.pictureBox1);
-            this.wiLBiTGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.wiLBiTGradientPanel1.ForeColor = System.Drawing.Color.Peru;
-            this.wiLBiTGradientPanel1.Location = new System.Drawing.Point(402, 0);
-            this.wiLBiTGradientPanel1.Name = "wiLBiTGradientPanel1";
-            this.wiLBiTGradientPanel1.Size = new System.Drawing.Size(383, 419);
-            this.wiLBiTGradientPanel1.TabIndex = 10;
-            // 
-            // wiLBiTButton1
-            // 
-            this.wiLBiTButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
-            this.wiLBiTButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.wiLBiTButton1.BorderRadius = 15;
-            this.wiLBiTButton1.BorderSize = 2;
-            this.wiLBiTButton1.FlatAppearance.BorderSize = 0;
-            this.wiLBiTButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.wiLBiTButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wiLBiTButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.wiLBiTButton1.Location = new System.Drawing.Point(15, 349);
-            this.wiLBiTButton1.Name = "wiLBiTButton1";
-            this.wiLBiTButton1.Size = new System.Drawing.Size(210, 51);
-            this.wiLBiTButton1.TabIndex = 5;
-            this.wiLBiTButton1.Text = "Manage";
-            this.wiLBiTButton1.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("B Koodak", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.Location = new System.Drawing.Point(278, 303);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 36);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "مال فلانی";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("B Koodak", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(313, 247);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 36);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "اتاق";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(383, 228);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // frmMain
             // 
@@ -390,9 +314,6 @@
             this.panRoom.ResumeLayout(false);
             this.panRoom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom)).EndInit();
-            this.wiLBiTGradientPanel1.ResumeLayout(false);
-            this.wiLBiTGradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -415,11 +336,6 @@
         private System.Windows.Forms.Label lblOwner;
         private System.Windows.Forms.Label lblRoomName;
         private System.Windows.Forms.PictureBox picRoom;
-        private WiLBiT.WiLBiTGradientPanel wiLBiTGradientPanel1;
-        private WiLBiT.WiLBiTButton wiLBiTButton1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Splitter splitter6;
     }
 }

@@ -10,7 +10,9 @@
         <EntityTypeShape EntityType="OtaghMan_DBModel.Storages_tbl" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="OtaghMan_DBModel.Equipment_To_Storages" ManuallyRouted="false" />
         <AssociationConnector Association="OtaghMan_DBModel.Storages_To_Rooms" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="OtaghMan_DBModel.Users_tbl" Width="1.5" PointX="3.375" PointY="4.25" />
+        <EntityTypeShape EntityType="OtaghMan_DBModel.Users_tbl" Width="1.5" PointX="8.125" PointY="2.875" />
+        <AssociationConnector Association="OtaghMan_DBModel.Equipment_To_Users" />
+        <EntityTypeShape EntityType="OtaghMan_DBModel.sysdiagrams" Width="1.5" PointX="3.625" PointY="4.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

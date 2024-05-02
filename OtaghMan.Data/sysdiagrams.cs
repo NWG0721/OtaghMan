@@ -12,16 +12,12 @@ namespace OtaghMan.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Equipment_tbl
+    public partial class sysdiagrams
     {
-        public int EQUIPMENT_ID { get; set; }
-        public string EQUIPMENT_NAME { get; set; }
-        public int EQUIPMENT_TYPE { get; set; }
-        public string EQUIPMENT_PIC { get; set; }
-        public int EQUIPMENT_STORAGE { get; set; }
-        public int EQUIPMENT_OWNER { get; set; }
-    
-        public virtual Storages_tbl Storages_tbl { get; set; }
-        public virtual Users_tbl Users_tbl { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

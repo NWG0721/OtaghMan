@@ -14,6 +14,7 @@
           <Property Name="EQUIPMENT_TYPE" Type="int" Nullable="false" />
           <Property Name="EQUIPMENT_PIC" Type="nchar" MaxLength="257" />
           <Property Name="EQUIPMENT_STORAGE" Type="int" Nullable="false" />
+          <Property Name="EQUIPMENT_OWNER" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Rooms_tbl">
           <Key>
@@ -31,10 +32,19 @@
           <Property Name="STORAGE_TYPE" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="ROOM_ID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Users_tbl">
           <Key>
             <PropertyRef Name="USER_ID" />
-            <PropertyRef Name="USER_USERNAME" />
           </Key>
           <Property Name="USER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="USER_USERNAME" Type="nvarchar" MaxLength="150" Nullable="false" />
@@ -51,6 +61,18 @@
             </Principal>
             <Dependent Role="Equipment_tbl">
               <PropertyRef Name="EQUIPMENT_STORAGE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Equipment_To_Users">
+          <End Role="Users_tbl" Type="Self.Users_tbl" Multiplicity="1" />
+          <End Role="Equipment_tbl" Type="Self.Equipment_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users_tbl">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="Equipment_tbl">
+              <PropertyRef Name="EQUIPMENT_OWNER" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -72,9 +94,14 @@
           <EntitySet Name="Equipment_tbl" EntityType="Self.Equipment_tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rooms_tbl" EntityType="Self.Rooms_tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Storages_tbl" EntityType="Self.Storages_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users_tbl" EntityType="Self.Users_tbl" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="Equipment_To_Storages" Association="Self.Equipment_To_Storages">
             <End Role="Storages_tbl" EntitySet="Storages_tbl" />
+            <End Role="Equipment_tbl" EntitySet="Equipment_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="Equipment_To_Users" Association="Self.Equipment_To_Users">
+            <End Role="Users_tbl" EntitySet="Users_tbl" />
             <End Role="Equipment_tbl" EntitySet="Equipment_tbl" />
           </AssociationSet>
           <AssociationSet Name="Storages_To_Rooms" Association="Self.Storages_To_Rooms">
@@ -96,6 +123,8 @@
           <Property Name="EQUIPMENT_PIC" Type="String" MaxLength="257" FixedLength="true" Unicode="true" />
           <Property Name="EQUIPMENT_STORAGE" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Storages_tbl" Relationship="Self.Equipment_To_Storages" FromRole="Equipment_tbl" ToRole="Storages_tbl" />
+          <Property Name="EQUIPMENT_OWNER" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Users_tbl" Relationship="OtaghMan_DBModel.Equipment_To_Users" FromRole="Equipment_tbl" ToRole="Users_tbl" />
         </EntityType>
         <EntityType Name="Rooms_tbl">
           <Key>
@@ -157,15 +186,42 @@
             <End Role="Storages_tbl" EntitySet="Storages_tbl" />
           </AssociationSet>
           <EntitySet Name="Users_tbl" EntityType="OtaghMan_DBModel.Users_tbl" />
+          <AssociationSet Name="Equipment_To_Users" Association="OtaghMan_DBModel.Equipment_To_Users">
+            <End Role="Users_tbl" EntitySet="Users_tbl" />
+            <End Role="Equipment_tbl" EntitySet="Equipment_tbl" />
+          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="OtaghMan_DBModel.sysdiagrams" />
         </EntityContainer>
         <EntityType Name="Users_tbl">
           <Key>
             <PropertyRef Name="USER_ID" />
-            <PropertyRef Name="USER_USERNAME" />
           </Key>
           <Property Name="USER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="USER_USERNAME" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="USER_PASSWORD" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipment_tbl" Relationship="OtaghMan_DBModel.Equipment_To_Users" FromRole="Users_tbl" ToRole="Equipment_tbl" />
+        </EntityType>
+        <Association Name="Equipment_To_Users">
+          <End Type="OtaghMan_DBModel.Users_tbl" Role="Users_tbl" Multiplicity="1" />
+          <End Type="OtaghMan_DBModel.Equipment_tbl" Role="Equipment_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users_tbl">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="Equipment_tbl">
+              <PropertyRef Name="EQUIPMENT_OWNER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -176,6 +232,7 @@
           <EntitySetMapping Name="Equipment_tbl">
             <EntityTypeMapping TypeName="OtaghMan_DBModel.Equipment_tbl">
               <MappingFragment StoreEntitySet="Equipment_tbl">
+                <ScalarProperty Name="EQUIPMENT_OWNER" ColumnName="EQUIPMENT_OWNER" />
                 <ScalarProperty Name="EQUIPMENT_ID" ColumnName="EQUIPMENT_ID" />
                 <ScalarProperty Name="EQUIPMENT_NAME" ColumnName="EQUIPMENT_NAME" />
                 <ScalarProperty Name="EQUIPMENT_TYPE" ColumnName="EQUIPMENT_TYPE" />
@@ -208,6 +265,17 @@
                 <ScalarProperty Name="USER_PASSWORD" ColumnName="USER_PASSWORD" />
                 <ScalarProperty Name="USER_USERNAME" ColumnName="USER_USERNAME" />
                 <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="OtaghMan_DBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

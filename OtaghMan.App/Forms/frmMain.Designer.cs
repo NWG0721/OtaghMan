@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             AltoControls.AltoButton btnHeader;
             this.panHead = new System.Windows.Forms.Panel();
             this.picAppIcon = new WiLBiT.WiLBiTRoundedPictureBox2();
             this.btnMinimize = new AltoControls.AltoButton();
             this.btnExit = new AltoControls.AltoButton();
             this.panMenu = new System.Windows.Forms.Panel();
+            this.txtSearch = new WiLBiT.WiLBiTTextBox();
+            this.splitter7 = new System.Windows.Forms.Splitter();
+            this.btnSearch = new AltoControls.AltoButton();
             this.splitter3 = new System.Windows.Forms.Splitter();
+            this.btnRefresh = new AltoControls.AltoButton();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.splitter4 = new System.Windows.Forms.Splitter();
@@ -42,13 +47,13 @@
             this.panRoom = new WiLBiT.WiLBiTGradientPanel();
             this.btnOpenRoom = new WiLBiT.WiLBiTButton();
             this.btnManageRoom = new WiLBiT.WiLBiTButton();
-            this.lblOwner = new System.Windows.Forms.Label();
             this.lblRoomName = new System.Windows.Forms.Label();
             this.picRoom = new System.Windows.Forms.PictureBox();
             this.splitter6 = new System.Windows.Forms.Splitter();
             this.panContaner = new System.Windows.Forms.Panel();
             this.panAddnewRoom = new WiLBiT.WiLBiTGradientPanel();
             this.btnAddnewRoom = new AltoControls.AltoButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             btnHeader = new AltoControls.AltoButton();
             this.panHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).BeginInit();
@@ -157,21 +162,102 @@
             // panMenu
             // 
             this.panMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
+            this.panMenu.Controls.Add(this.txtSearch);
+            this.panMenu.Controls.Add(this.splitter7);
+            this.panMenu.Controls.Add(this.btnSearch);
             this.panMenu.Controls.Add(this.splitter3);
+            this.panMenu.Controls.Add(this.btnRefresh);
             this.panMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panMenu.Location = new System.Drawing.Point(0, 35);
             this.panMenu.Name = "panMenu";
             this.panMenu.Size = new System.Drawing.Size(852, 48);
             this.panMenu.TabIndex = 2;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSearch.BorderColor = System.Drawing.Color.Peru;
+            this.txtSearch.BorderFocusColor = System.Drawing.Color.Peru;
+            this.txtSearch.BorderRadius = 15;
+            this.txtSearch.BorderSize = 3;
+            this.txtSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch.Location = new System.Drawing.Point(222, 0);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Multiline = false;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtSearch.PasswordChar = false;
+            this.txtSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtSearch.PlaceholderText = "Search";
+            this.txtSearch.Size = new System.Drawing.Size(0, 47);
+            this.txtSearch.TabIndex = 14;
+            this.txtSearch.Texts = "";
+            this.txtSearch.UnderlinedStyle = false;
+            this.txtSearch.Visible = false;
+            // 
+            // splitter7
+            // 
+            this.splitter7.Enabled = false;
+            this.splitter7.Location = new System.Drawing.Point(205, 0);
+            this.splitter7.Name = "splitter7";
+            this.splitter7.Size = new System.Drawing.Size(17, 48);
+            this.splitter7.TabIndex = 13;
+            this.splitter7.TabStop = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnSearch.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSearch.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnSearch.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnSearch.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnSearch.Location = new System.Drawing.Point(111, 0);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Radius = 10;
+            this.btnSearch.Size = new System.Drawing.Size(94, 48);
+            this.btnSearch.Stroke = true;
+            this.btnSearch.StrokeColor = System.Drawing.Color.Peru;
+            this.btnSearch.TabIndex = 12;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.Transparency = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // splitter3
             // 
-            this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitter3.Location = new System.Drawing.Point(0, 0);
+            this.splitter3.Enabled = false;
+            this.splitter3.Location = new System.Drawing.Point(94, 0);
             this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(852, 52);
-            this.splitter3.TabIndex = 9;
+            this.splitter3.Size = new System.Drawing.Size(17, 48);
+            this.splitter3.TabIndex = 11;
             this.splitter3.TabStop = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnRefresh.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRefresh.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.ForeColor = System.Drawing.Color.Black;
+            this.btnRefresh.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnRefresh.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnRefresh.Location = new System.Drawing.Point(0, 0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Radius = 10;
+            this.btnRefresh.Size = new System.Drawing.Size(94, 48);
+            this.btnRefresh.Stroke = true;
+            this.btnRefresh.StrokeColor = System.Drawing.Color.Peru;
+            this.btnRefresh.TabIndex = 10;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Transparency = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // splitter1
             // 
@@ -221,7 +307,6 @@
             this.panRoom.BorderSize = 2;
             this.panRoom.Controls.Add(this.btnOpenRoom);
             this.panRoom.Controls.Add(this.btnManageRoom);
-            this.panRoom.Controls.Add(this.lblOwner);
             this.panRoom.Controls.Add(this.lblRoomName);
             this.panRoom.Controls.Add(this.picRoom);
             this.panRoom.Dock = System.Windows.Forms.DockStyle.Right;
@@ -267,23 +352,12 @@
             this.btnManageRoom.UseVisualStyleBackColor = false;
             this.btnManageRoom.Click += new System.EventHandler(this.lblManageRoom_Click);
             // 
-            // lblOwner
-            // 
-            this.lblOwner.AutoSize = true;
-            this.lblOwner.BackColor = System.Drawing.Color.Transparent;
-            this.lblOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblOwner.Location = new System.Drawing.Point(278, 303);
-            this.lblOwner.Name = "lblOwner";
-            this.lblOwner.Size = new System.Drawing.Size(86, 25);
-            this.lblOwner.TabIndex = 4;
-            this.lblOwner.Text = "مال فلانی";
-            // 
             // lblRoomName
             // 
             this.lblRoomName.AutoSize = true;
             this.lblRoomName.BackColor = System.Drawing.Color.Transparent;
             this.lblRoomName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblRoomName.Location = new System.Drawing.Point(313, 247);
+            this.lblRoomName.Location = new System.Drawing.Point(313, 279);
             this.lblRoomName.Name = "lblRoomName";
             this.lblRoomName.Size = new System.Drawing.Size(43, 25);
             this.lblRoomName.TabIndex = 3;
@@ -363,6 +437,11 @@
             this.btnAddnewRoom.Text = "+";
             this.btnAddnewRoom.Transparency = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,18 +480,22 @@
         private System.Windows.Forms.Panel panMenu;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Splitter splitter2;
-        private System.Windows.Forms.Splitter splitter3;
         private System.Windows.Forms.Splitter splitter4;
         private System.Windows.Forms.Splitter splitter5;
         private WiLBiT.WiLBiTGradientPanel panRoom;
         private WiLBiT.WiLBiTButton btnOpenRoom;
         private WiLBiT.WiLBiTButton btnManageRoom;
-        private System.Windows.Forms.Label lblOwner;
         private System.Windows.Forms.Label lblRoomName;
         private System.Windows.Forms.PictureBox picRoom;
         private System.Windows.Forms.Splitter splitter6;
         private System.Windows.Forms.Panel panContaner;
         private WiLBiT.WiLBiTGradientPanel panAddnewRoom;
         private AltoControls.AltoButton btnAddnewRoom;
+        private System.Windows.Forms.Splitter splitter7;
+        private AltoControls.AltoButton btnSearch;
+        private System.Windows.Forms.Splitter splitter3;
+        private AltoControls.AltoButton btnRefresh;
+        private WiLBiT.WiLBiTTextBox txtSearch;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -90,6 +90,9 @@
     <Compile Include="Storages_tbl.cs">
       <DependentUpon>OtaghManModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>OtaghManModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Users_tbl.cs">
       <DependentUpon>OtaghManModel.tt</DependentUpon>
     </Compile>

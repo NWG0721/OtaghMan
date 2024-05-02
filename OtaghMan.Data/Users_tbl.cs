@@ -14,8 +14,17 @@ namespace OtaghMan.Data
     
     public partial class Users_tbl
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Users_tbl()
+        {
+            this.Equipment_tbl = new HashSet<Equipment_tbl>();
+        }
+    
         public int USER_ID { get; set; }
         public string USER_USERNAME { get; set; }
         public string USER_PASSWORD { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Equipment_tbl> Equipment_tbl { get; set; }
     }
 }

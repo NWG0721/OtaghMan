@@ -61,6 +61,50 @@ namespace OtaghMan.App
             frmAddEditRoom editRooms = new frmAddEditRoom();
             editRooms.ShowDialog();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+
+        }
+
+
+        bool txtSearchIsVisible = false;
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (txtSearchIsVisible)
+            {
+                txtSearch.Width = txtSearch.Width-10;
+                if (txtSearch.Width ==0)
+                {
+                txtSearch.Visible = !txtSearch.Visible;
+                    txtSearchIsVisible = false;
+                    timer1.Enabled = false;
+                }
+            }
+            else
+            {
+            txtSearch.Visible = !txtSearch.Visible;
+                txtSearch.Width = txtSearch.Width + 10;
+                if (txtSearch.Width == 250)
+                {
+                    txtSearchIsVisible = true;
+                    timer1.Enabled = false;
+                }
+
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            panContaner.Controls.Clear();
+            for (int i = 0; i < 10; i++)
+            {
+            CartGenerator(i,$"Nima"+i);
+
+            }
+        }
     }
 }
 

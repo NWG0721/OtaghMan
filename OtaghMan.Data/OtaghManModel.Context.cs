@@ -29,5 +29,6 @@ namespace OtaghMan.Data
         public virtual DbSet<Rooms_tbl> Rooms_tbl { get; set; }
         public virtual DbSet<Storages_tbl> Storages_tbl { get; set; }
         public virtual DbSet<Users_tbl> Users_tbl { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

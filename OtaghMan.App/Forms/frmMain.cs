@@ -8,6 +8,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
+
 
 namespace OtaghMan.App
 {
@@ -52,5 +55,12 @@ namespace OtaghMan.App
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void lblManageRoom_Click(object sender, EventArgs e)
+        {
+            frmAddEditRoom editRooms = new frmAddEditRoom();
+            editRooms.ShowDialog();
+        }
     }
 }
+

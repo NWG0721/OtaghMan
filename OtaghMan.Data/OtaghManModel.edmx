@@ -11,7 +11,6 @@
           </Key>
           <Property Name="EQUIPMENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EQUIPMENT_NAME" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="EQUIPMENT_TYPE" Type="int" Nullable="false" />
           <Property Name="EQUIPMENT_PIC" Type="nchar" MaxLength="257" />
           <Property Name="EQUIPMENT_STORAGE" Type="int" Nullable="false" />
           <Property Name="EQUIPMENT_OWNER" Type="int" Nullable="false" />
@@ -30,7 +29,6 @@
           </Key>
           <Property Name="STORAGE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="STORAGE_NAME" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="STORAGE_TYPE" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="ROOM_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -120,7 +118,6 @@
           </Key>
           <Property Name="EQUIPMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EQUIPMENT_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EQUIPMENT_TYPE" Type="Int32" Nullable="false" />
           <Property Name="EQUIPMENT_PIC" Type="String" MaxLength="257" FixedLength="true" Unicode="true" />
           <Property Name="EQUIPMENT_STORAGE" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Storages_tbl" Relationship="Self.Equipment_To_Storages" FromRole="Equipment_tbl" ToRole="Storages_tbl" />
@@ -142,7 +139,6 @@
           </Key>
           <Property Name="STORAGE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="STORAGE_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="STORAGE_TYPE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ROOM_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Equipment_tbl" Relationship="Self.Equipment_To_Storages" FromRole="Storages_tbl" ToRole="Equipment_tbl" />
           <NavigationProperty Name="Rooms_tbl" Relationship="Self.Storages_To_Rooms" FromRole="Storages_tbl" ToRole="Rooms_tbl" />
@@ -237,7 +233,6 @@
                 <ScalarProperty Name="EQUIPMENT_OWNER" ColumnName="EQUIPMENT_OWNER" />
                 <ScalarProperty Name="EQUIPMENT_ID" ColumnName="EQUIPMENT_ID" />
                 <ScalarProperty Name="EQUIPMENT_NAME" ColumnName="EQUIPMENT_NAME" />
-                <ScalarProperty Name="EQUIPMENT_TYPE" ColumnName="EQUIPMENT_TYPE" />
                 <ScalarProperty Name="EQUIPMENT_PIC" ColumnName="EQUIPMENT_PIC" />
                 <ScalarProperty Name="EQUIPMENT_STORAGE" ColumnName="EQUIPMENT_STORAGE" />
               </MappingFragment>
@@ -257,7 +252,6 @@
               <MappingFragment StoreEntitySet="Storages_tbl">
                 <ScalarProperty Name="STORAGE_ID" ColumnName="STORAGE_ID" />
                 <ScalarProperty Name="STORAGE_NAME" ColumnName="STORAGE_NAME" />
-                <ScalarProperty Name="STORAGE_TYPE" ColumnName="STORAGE_TYPE" />
                 <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
               </MappingFragment>
             </EntityTypeMapping>

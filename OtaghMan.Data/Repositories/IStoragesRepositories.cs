@@ -11,6 +11,10 @@ namespace OtaghMan.Data.Repositories
 
         //------------------------------| SELECT |------------------------------//
         List<Storages_tbl> GetAllStorages();
+        List<Storages_tbl> GetStoragesByFillter(string parameter);
+        List<Storages_tbl> GetStorages(int roomID);
+
+
 
         Storages_tbl GetStorageByID(int StorageId);
 
@@ -19,6 +23,7 @@ namespace OtaghMan.Data.Repositories
         //------------------------------| INSERT |------------------------------//
 
         bool AddStorage(Storages_tbl Storage);
+
 
         //------------------------------| INSERT |------------------------------//
 

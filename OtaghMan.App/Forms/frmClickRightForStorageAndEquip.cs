@@ -57,7 +57,7 @@ namespace OtaghMan.App
 
         private void frmClickRightForStorageAndEquip_Load(object sender, EventArgs e)
         {
-
+            this.Location = Cursor.Position;
         }
     }
 }

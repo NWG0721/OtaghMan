@@ -30,7 +30,6 @@
         {
             AltoControls.AltoButton btnHeader;
             this.panHead = new System.Windows.Forms.Panel();
-            this.picAppIcon = new WiLBiT.WiLBiTRoundedPictureBox2();
             this.btnMinimize = new AltoControls.AltoButton();
             this.btnExit = new AltoControls.AltoButton();
             this.panStorages = new System.Windows.Forms.Panel();
@@ -42,7 +41,7 @@
             this.panTop = new System.Windows.Forms.Panel();
             this.txtSearch = new AltoControls.AltoTextBox();
             this.altoButton3 = new AltoControls.AltoButton();
-            this.altoButton1 = new AltoControls.AltoButton();
+            this.btnAddStorage = new AltoControls.AltoButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.altoButton2 = new AltoControls.AltoButton();
             this.altoButton4 = new AltoControls.AltoButton();
@@ -51,14 +50,15 @@
             this.lblRoomName = new AltoControls.AltoSlidingLabel();
             this.layoutPanContaner = new System.Windows.Forms.FlowLayoutPanel();
             this.splitBetween = new System.Windows.Forms.Splitter();
+            this.picAppIcon = new WiLBiT.WiLBiTRoundedPictureBox2();
             btnHeader = new AltoControls.AltoButton();
             this.panHead.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).BeginInit();
             this.panStorages.SuspendLayout();
             this.panContaneStorage.SuspendLayout();
             this.panStorage.SuspendLayout();
             this.panTop.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHeader
@@ -94,22 +94,6 @@
             this.panHead.Name = "panHead";
             this.panHead.Size = new System.Drawing.Size(947, 37);
             this.panHead.TabIndex = 0;
-            // 
-            // picAppIcon
-            // 
-            this.picAppIcon.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.picAppIcon.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.picAppIcon.BorderColor2 = System.Drawing.Color.HotPink;
-            this.picAppIcon.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.picAppIcon.BorderSize = 2;
-            this.picAppIcon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAppIcon.GradientAngle = 50F;
-            this.picAppIcon.Location = new System.Drawing.Point(0, 0);
-            this.picAppIcon.Name = "picAppIcon";
-            this.picAppIcon.Size = new System.Drawing.Size(35, 35);
-            this.picAppIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAppIcon.TabIndex = 5;
-            this.picAppIcon.TabStop = false;
             // 
             // btnMinimize
             // 
@@ -254,7 +238,7 @@
             this.panTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
             this.panTop.Controls.Add(this.txtSearch);
             this.panTop.Controls.Add(this.altoButton3);
-            this.panTop.Controls.Add(this.altoButton1);
+            this.panTop.Controls.Add(this.btnAddStorage);
             this.panTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panTop.Location = new System.Drawing.Point(0, 0);
             this.panTop.Name = "panTop";
@@ -291,26 +275,28 @@
             this.altoButton3.TabIndex = 16;
             this.altoButton3.Text = "تازه سازی";
             this.altoButton3.Transparency = false;
+            this.altoButton3.Click += new System.EventHandler(this.altoButton3_Click);
             // 
-            // altoButton1
+            // btnAddStorage
             // 
-            this.altoButton1.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
-            this.altoButton1.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.altoButton1.BackColor = System.Drawing.Color.Transparent;
-            this.altoButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.altoButton1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altoButton1.ForeColor = System.Drawing.Color.Peru;
-            this.altoButton1.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
-            this.altoButton1.Inactive2 = System.Drawing.Color.Transparent;
-            this.altoButton1.Location = new System.Drawing.Point(5, 3);
-            this.altoButton1.Name = "altoButton1";
-            this.altoButton1.Radius = 10;
-            this.altoButton1.Size = new System.Drawing.Size(127, 60);
-            this.altoButton1.Stroke = true;
-            this.altoButton1.StrokeColor = System.Drawing.Color.Peru;
-            this.altoButton1.TabIndex = 14;
-            this.altoButton1.Text = "افزودن جدید";
-            this.altoButton1.Transparency = false;
+            this.btnAddStorage.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnAddStorage.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.btnAddStorage.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddStorage.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAddStorage.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStorage.ForeColor = System.Drawing.Color.Peru;
+            this.btnAddStorage.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnAddStorage.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnAddStorage.Location = new System.Drawing.Point(5, 3);
+            this.btnAddStorage.Name = "btnAddStorage";
+            this.btnAddStorage.Radius = 10;
+            this.btnAddStorage.Size = new System.Drawing.Size(127, 60);
+            this.btnAddStorage.Stroke = true;
+            this.btnAddStorage.StrokeColor = System.Drawing.Color.Peru;
+            this.btnAddStorage.TabIndex = 14;
+            this.btnAddStorage.Text = "افزودن جدید";
+            this.btnAddStorage.Transparency = false;
+            this.btnAddStorage.Click += new System.EventHandler(this.btnAddStorage_Click);
             // 
             // panel1
             // 
@@ -417,6 +403,22 @@
             this.splitBetween.TabIndex = 4;
             this.splitBetween.TabStop = false;
             // 
+            // picAppIcon
+            // 
+            this.picAppIcon.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.picAppIcon.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.picAppIcon.BorderColor2 = System.Drawing.Color.HotPink;
+            this.picAppIcon.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.picAppIcon.BorderSize = 2;
+            this.picAppIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picAppIcon.GradientAngle = 50F;
+            this.picAppIcon.Location = new System.Drawing.Point(0, 0);
+            this.picAppIcon.Name = "picAppIcon";
+            this.picAppIcon.Size = new System.Drawing.Size(35, 35);
+            this.picAppIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAppIcon.TabIndex = 5;
+            this.picAppIcon.TabStop = false;
+            // 
             // frmStorages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,14 +434,15 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmStorages_Load);
             this.panHead.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).EndInit();
             this.panStorages.ResumeLayout(false);
             this.panContaneStorage.ResumeLayout(false);
             this.panStorage.ResumeLayout(false);
             this.panTop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -462,7 +465,7 @@
         private System.Windows.Forms.Label label1;
         private AltoControls.AltoSlidingLabel lblRoomName;
         private WiLBiT.WiLBiTTextBox txtStorageType;
-        private AltoControls.AltoButton altoButton1;
+        private AltoControls.AltoButton btnAddStorage;
         private AltoControls.AltoTextBox txtSearch;
         private AltoControls.AltoButton altoButton3;
         private AltoControls.AltoButton altoButton2;

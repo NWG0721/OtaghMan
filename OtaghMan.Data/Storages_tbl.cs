@@ -22,7 +22,6 @@ namespace OtaghMan.Data
     
         public int STORAGE_ID { get; set; }
         public string STORAGE_NAME { get; set; }
-        public string STORAGE_TYPE { get; set; }
         public int ROOM_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

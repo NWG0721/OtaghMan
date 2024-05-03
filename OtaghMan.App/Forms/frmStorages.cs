@@ -1,4 +1,5 @@
 ﻿using OtaghMan.Data;
+using OtaghMan.Data.Context;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,12 +54,18 @@ namespace OtaghMan.App.Forms
         //
 
         public int index = 0;
+        string roomName;
+        int roomID;
+
+        StorageUnit db ;
+
 
         public frmStorages(Rooms_tbl rooms)
         {
 
-            lblRoomName.Text = rooms.ROOM_NAME.ToString();
             InitializeComponent();
+            roomName = rooms.ROOM_NAME.ToString();
+            roomID = rooms.ROOM_ID;
         }
 
 
@@ -94,13 +101,37 @@ namespace OtaghMan.App.Forms
             if (e.Button == MouseButtons.Right)
             {
                 frmClickRightForStorageAndEquip fCRFSAE = new frmClickRightForStorageAndEquip(index);
+
                 fCRFSAE.ShowDialog();
-                fCRFSAE.Location = Cursor.Position;
+                if (fCRFSAE.DialogResult == DialogResult.OK)
+                {
+                    CartCaller();
+                }
             }
             if (e.Button == MouseButtons.Left)
             {
              
             }
+        }
+
+        private void frmStorages_Load(object sender, EventArgs e)
+        {
+            lblRoomName.Text = roomName;
+        }
+
+        private void btnAddStorage_Click(object sender, EventArgs e)
+        {
+            frmAddStorage AddStorage = new frmAddStorage(roomID);
+            AddStorage.ShowDialog();
+            if (AddStorage.DialogResult == DialogResult.OK)
+            {
+                CartCaller();
+            }
+        }
+
+        private void altoButton3_Click(object sender, EventArgs e)
+        {
+            CartCaller();
         }
     }
 }

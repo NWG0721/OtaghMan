@@ -66,7 +66,15 @@ namespace OtaghMan.Data.Services
             return db.Storages_tbl.Find(storageId);
         }
 
+        public List<Storages_tbl> GetStorages(int roomID)
+        {
+            return db.Storages_tbl.Where(storage => storage.ROOM_ID == roomID).ToList();
+        }
 
+        public List<Storages_tbl> GetStoragesByFillter(string parameter)
+        {
+            return db.Storages_tbl.Where(storage => storage.STORAGE_NAME == parameter).ToList();
+        }
 
         public bool UpdateStorageInfo(Storages_tbl Storage)
         {

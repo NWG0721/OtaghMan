@@ -16,7 +16,6 @@ namespace OtaghMan.Data
     {
         public int EQUIPMENT_ID { get; set; }
         public string EQUIPMENT_NAME { get; set; }
-        public int EQUIPMENT_TYPE { get; set; }
         public string EQUIPMENT_PIC { get; set; }
         public int EQUIPMENT_STORAGE { get; set; }
         public int EQUIPMENT_OWNER { get; set; }

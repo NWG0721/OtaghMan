@@ -28,78 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panPicBox = new WiLBiT.WiLBiTPanel();
-            this.picRoomPicture = new System.Windows.Forms.PictureBox();
-            this.btnAddPicture = new AltoControls.AltoButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txtRoomName = new AltoControls.AltoTextBox();
             this.lblRoomName = new System.Windows.Forms.Label();
             this.panDown = new System.Windows.Forms.Panel();
             this.altoButton3 = new AltoControls.AltoButton();
             this.altoButton1 = new AltoControls.AltoButton();
-            this.panPicBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRoomPicture)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAddPicture = new AltoControls.AltoButton();
+            this.picRoomPicture = new System.Windows.Forms.PictureBox();
+            this.panPicBox = new WiLBiT.WiLBiTPanel();
             this.panDown.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomPicture)).BeginInit();
+            this.panPicBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panPicBox
-            // 
-            this.panPicBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
-            this.panPicBox.BorderColor = System.Drawing.Color.Peru;
-            this.panPicBox.BorderRadius = 20;
-            this.panPicBox.BorderSize = 0;
-            this.panPicBox.Controls.Add(this.picRoomPicture);
-            this.panPicBox.Controls.Add(this.btnAddPicture);
-            this.panPicBox.Controls.Add(this.panel1);
-            this.panPicBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.panPicBox.Location = new System.Drawing.Point(12, 12);
-            this.panPicBox.Name = "panPicBox";
-            this.panPicBox.Size = new System.Drawing.Size(316, 340);
-            this.panPicBox.TabIndex = 1;
-            // 
-            // picRoomPicture
-            // 
-            this.picRoomPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picRoomPicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picRoomPicture.Location = new System.Drawing.Point(0, 57);
-            this.picRoomPicture.Name = "picRoomPicture";
-            this.picRoomPicture.Size = new System.Drawing.Size(316, 239);
-            this.picRoomPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRoomPicture.TabIndex = 4;
-            this.picRoomPicture.TabStop = false;
-            // 
-            // btnAddPicture
-            // 
-            this.btnAddPicture.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.btnAddPicture.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
-            this.btnAddPicture.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddPicture.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAddPicture.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAddPicture.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPicture.ForeColor = System.Drawing.Color.Peru;
-            this.btnAddPicture.Inactive1 = System.Drawing.Color.Transparent;
-            this.btnAddPicture.Inactive2 = System.Drawing.Color.Transparent;
-            this.btnAddPicture.Location = new System.Drawing.Point(0, 296);
-            this.btnAddPicture.Name = "btnAddPicture";
-            this.btnAddPicture.Radius = 20;
-            this.btnAddPicture.Size = new System.Drawing.Size(316, 44);
-            this.btnAddPicture.Stroke = true;
-            this.btnAddPicture.StrokeColor = System.Drawing.Color.Peru;
-            this.btnAddPicture.TabIndex = 3;
-            this.btnAddPicture.Text = "انتخاب تصویر";
-            this.btnAddPicture.Transparency = false;
-            this.btnAddPicture.Click += new System.EventHandler(this.btnAddPicture_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.txtRoomName);
-            this.panel1.Controls.Add(this.lblRoomName);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(316, 57);
-            this.panel1.TabIndex = 0;
             // 
             // txtRoomName
             // 
@@ -177,6 +119,64 @@
             this.altoButton1.Transparency = true;
             this.altoButton1.Click += new System.EventHandler(this.altoButton1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtRoomName);
+            this.panel1.Controls.Add(this.lblRoomName);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(316, 57);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnAddPicture
+            // 
+            this.btnAddPicture.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.btnAddPicture.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnAddPicture.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddPicture.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAddPicture.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAddPicture.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPicture.ForeColor = System.Drawing.Color.Peru;
+            this.btnAddPicture.Inactive1 = System.Drawing.Color.Transparent;
+            this.btnAddPicture.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnAddPicture.Location = new System.Drawing.Point(0, 296);
+            this.btnAddPicture.Name = "btnAddPicture";
+            this.btnAddPicture.Radius = 20;
+            this.btnAddPicture.Size = new System.Drawing.Size(316, 44);
+            this.btnAddPicture.Stroke = true;
+            this.btnAddPicture.StrokeColor = System.Drawing.Color.Peru;
+            this.btnAddPicture.TabIndex = 3;
+            this.btnAddPicture.Text = "انتخاب تصویر";
+            this.btnAddPicture.Transparency = false;
+            this.btnAddPicture.Click += new System.EventHandler(this.btnAddPicture_Click);
+            // 
+            // picRoomPicture
+            // 
+            this.picRoomPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picRoomPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picRoomPicture.Location = new System.Drawing.Point(0, 57);
+            this.picRoomPicture.Name = "picRoomPicture";
+            this.picRoomPicture.Size = new System.Drawing.Size(316, 239);
+            this.picRoomPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRoomPicture.TabIndex = 4;
+            this.picRoomPicture.TabStop = false;
+            // 
+            // panPicBox
+            // 
+            this.panPicBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
+            this.panPicBox.BorderColor = System.Drawing.Color.Peru;
+            this.panPicBox.BorderRadius = 20;
+            this.panPicBox.BorderSize = 0;
+            this.panPicBox.Controls.Add(this.picRoomPicture);
+            this.panPicBox.Controls.Add(this.btnAddPicture);
+            this.panPicBox.Controls.Add(this.panel1);
+            this.panPicBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.panPicBox.Location = new System.Drawing.Point(12, 12);
+            this.panPicBox.Name = "panPicBox";
+            this.panPicBox.Size = new System.Drawing.Size(316, 340);
+            this.panPicBox.TabIndex = 1;
+            // 
             // frmAddEditRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,24 +190,24 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmAddEditRoom_Load);
-            this.panPicBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picRoomPicture)).EndInit();
+            this.panDown.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panDown.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomPicture)).EndInit();
+            this.panPicBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private WiLBiT.WiLBiTPanel panPicBox;
         private System.Windows.Forms.Label lblRoomName;
         private System.Windows.Forms.Panel panDown;
         private AltoControls.AltoButton altoButton3;
         private AltoControls.AltoButton altoButton1;
-        private System.Windows.Forms.PictureBox picRoomPicture;
-        private AltoControls.AltoButton btnAddPicture;
-        private System.Windows.Forms.Panel panel1;
         private AltoControls.AltoTextBox txtRoomName;
+        private System.Windows.Forms.Panel panel1;
+        private AltoControls.AltoButton btnAddPicture;
+        private System.Windows.Forms.PictureBox picRoomPicture;
+        private WiLBiT.WiLBiTPanel panPicBox;
     }
 }

@@ -14,11 +14,10 @@ namespace OtaghMan.App.Forms
 {
     public partial class frmStorages : Form
     {
-        public void CartGenerator(int countOfRooms, string roomName, string roomPic)
+        public void CartGenerator(int countOfRooms, string storageName)
         {
 
             WiLBiT.WiLBiTPanel panStorage_ = new WiLBiT.WiLBiTPanel();
-            WiLBiT.WiLBiTTextBox txtStorageType_ = new WiLBiT.WiLBiTTextBox();
             WiLBiT.WiLBiTTextBox txtStorageName_ = new WiLBiT.WiLBiTTextBox();
             Splitter splitBetween_ = new Splitter();
 
@@ -37,29 +36,6 @@ namespace OtaghMan.App.Forms
             panStorage_.Size = new System.Drawing.Size(268, 121);
             panStorage_.TabIndex = 0;
             panStorage_.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panStorage_MouseClick);
-            // 
-            // txtStorageType
-            // 
-            txtStorageType_.BackColor = System.Drawing.Color.Bisque;
-            txtStorageType_.BorderColor = System.Drawing.Color.Empty;
-            txtStorageType_.BorderFocusColor = System.Drawing.Color.Empty;
-            txtStorageType_.BorderRadius = 4;
-            txtStorageType_.BorderSize = 2;
-            txtStorageType_.Cursor = System.Windows.Forms.Cursors.Default;
-            txtStorageType_.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            txtStorageType_.ForeColor = System.Drawing.Color.Peru;
-            txtStorageType_.Location = new System.Drawing.Point(89, 53);
-            txtStorageType_.Margin = new System.Windows.Forms.Padding(4);
-            txtStorageType_.Multiline = false;
-            txtStorageType_.Name = "txtStorageType" + countOfRooms;
-            txtStorageType_.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            txtStorageType_.PasswordChar = false;
-            txtStorageType_.PlaceholderColor = System.Drawing.Color.DarkGray;
-            txtStorageType_.PlaceholderText = "";
-            txtStorageType_.Size = new System.Drawing.Size(175, 38);
-            txtStorageType_.TabIndex = 1;
-            txtStorageType_.Texts = "";
-            txtStorageType_.UnderlinedStyle = false;
             // 
             // txtStorageName
             // 
@@ -81,7 +57,7 @@ namespace OtaghMan.App.Forms
             txtStorageName_.PlaceholderText = "";
             txtStorageName_.Size = new System.Drawing.Size(175, 38);
             txtStorageName_.TabIndex = 0;
-            txtStorageName_.Texts = "";
+            txtStorageName_.Texts = storageName;
             txtStorageName_.UnderlinedStyle = false;
             // 
             // splitBetween
@@ -93,17 +69,21 @@ namespace OtaghMan.App.Forms
             splitBetween_.Size = new System.Drawing.Size(268, 10);
             splitBetween_.TabIndex = 4;
             splitBetween_.TabStop = false;
+
+            panContaneStorage.Controls.Add(panStorage_);
+            panStorage_.Controls.Add(txtStorageName_);
+            panContaneStorage.Controls.Add(splitBetween_);
         }
 
         public void CartCaller()
         {
-            //panContaneStorage.Controls.Clear();
-            //db = new RoomsUnit();
-            //foreach (var cart in db.RoomsRepository.GetAllRooms())
-            //{
-            //    CartGenerator(cart.ROOM_ID, cart.ROOM_NAME, cart.ROOM_PIC);
+            panContaneStorage.Controls.Clear();
+            db = new StorageUnit();
+            foreach (var cart in db.StorageRepository.GetStorages(roomID))
+            {
+                CartGenerator(cart.ROOM_ID, cart.STORAGE_NAME);
 
-            //}
+            }
         }
     }
 }

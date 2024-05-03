@@ -13,148 +13,132 @@ namespace OtaghMan.App
 {
     public partial class frmMain
     {
-        public void CartGenerator(int countOfRooms, string roomName,string roomPic)
+        public void CartGenerator(int countOfRooms, string roomName, string roomPic)
         {
             //------------------|  |------------------//
-            this.panRoom = new WiLBiT.WiLBiTGradientPanel();
-            this.btnOpenRoom = new WiLBiT.WiLBiTButton();
-            this.btnManageRoom = new WiLBiT.WiLBiTButton();
-            this.lblRoomName = new Label();
-            this.picRoom = new PictureBox();
-            this.splitter6 = new Splitter();
-            this.splitter9 = new System.Windows.Forms.Splitter();
-            this.panCardFooter = new System.Windows.Forms.Panel();
+            WiLBiT.WiLBiTGradientPanel panRoom_ = new WiLBiT.WiLBiTGradientPanel();
+            WiLBiT.WiLBiTButton btnOpenRoom_ = new WiLBiT.WiLBiTButton();
+            WiLBiT.WiLBiTButton btnManageRoom_ = new WiLBiT.WiLBiTButton();
+            TextBox txtRoomName_ = new TextBox();
+            PictureBox picRoom_ = new PictureBox();
+            Splitter splitter6_ = new Splitter();
+
             //------------------|  |------------------//
             // 
             // panRoom
             // 
-            this.panRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
-            this.panRoom.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
-            this.panRoom.BorderColor = System.Drawing.Color.Peru;
-            this.panRoom.BorderRadius = 15;
-            this.panRoom.BorderSize = 2;
-            this.panRoom.Controls.Add(this.btnOpenRoom);
-            this.panRoom.Controls.Add(this.btnManageRoom);
-            this.panRoom.Controls.Add(this.lblRoomName);
-            this.panRoom.Controls.Add(this.picRoom);
-            this.panRoom.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panRoom.ForeColor = System.Drawing.Color.Peru;
-            this.panRoom.Location = new System.Drawing.Point(552* countOfRooms, 0);
-            this.panRoom.Name = "panRoom"+ countOfRooms;
-            this.panRoom.Size = new System.Drawing.Size(383, 419);
-            this.panRoom.TabIndex = 4;
+            panRoom_.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            panRoom_.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
+            panRoom_.BorderColor = System.Drawing.Color.Peru;
+            panRoom_.BorderRadius = 15;
+            panRoom_.BorderSize = 2;
+            panRoom_.Dock = System.Windows.Forms.DockStyle.Right;
+            panRoom_.ForeColor = System.Drawing.Color.Peru;
+            panRoom_.Location = new System.Drawing.Point(552 * countOfRooms, 0);
+            panRoom_.Name = "panRoom_" + countOfRooms;
+            panRoom_.Size = new System.Drawing.Size(383, 419);
+            panRoom_.TabIndex = 4;
             // 
             // btnOpenRoom
             // 
-            this.btnOpenRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
-            this.btnOpenRoom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.btnOpenRoom.BorderRadius = 15;
-            this.btnOpenRoom.BorderSize = 2;
-            this.btnOpenRoom.FlatAppearance.BorderSize = 0;
-            this.btnOpenRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.btnOpenRoom.Location = new System.Drawing.Point(6, 3);
-            this.btnOpenRoom.Name = "btnOpenRoom" + countOfRooms;
-            this.btnOpenRoom.Size = new System.Drawing.Size(169, 51);
-            this.btnOpenRoom.TabIndex = 5;
-            this.btnOpenRoom.Text = "بازکردن";
-            this.btnOpenRoom.UseVisualStyleBackColor = false;
+            btnOpenRoom_.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
+            btnOpenRoom_.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            btnOpenRoom_.BorderRadius = 15;
+            btnOpenRoom_.BorderSize = 2;
+            btnOpenRoom_.FlatAppearance.BorderSize = 0;
+            btnOpenRoom_.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnOpenRoom_.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnOpenRoom_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            btnOpenRoom_.Location = new System.Drawing.Point(6, 361);
+            btnOpenRoom_.Name = "btnOpenRoom_" + countOfRooms;
+            btnOpenRoom_.Size = new System.Drawing.Size(169, 51);
+            btnOpenRoom_.TabIndex = 5;
+            btnOpenRoom_.Text = "بازکردن";
+            btnOpenRoom_.UseVisualStyleBackColor = false;
             // 
             // btnManageRoom
             // 
-            this.btnManageRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
-            this.btnManageRoom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.btnManageRoom.BorderRadius = 15;
-            this.btnManageRoom.BorderSize = 2;
-            this.btnManageRoom.FlatAppearance.BorderSize = 0;
-            this.btnManageRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.btnManageRoom.Location = new System.Drawing.Point(208, 3);
-            this.btnManageRoom.Name = "btnManageRoom" + countOfRooms;
-            this.btnManageRoom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnManageRoom.Size = new System.Drawing.Size(169, 51);
-            this.btnManageRoom.TabIndex = 5;
-            this.btnManageRoom.Text = "مدیریت";
-            this.btnManageRoom.UseVisualStyleBackColor = false;
-            this.btnManageRoom.Click += new System.EventHandler(this.lblManageRoom_Click);
+            btnManageRoom_.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
+            btnManageRoom_.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            btnManageRoom_.BorderRadius = 15;
+            btnManageRoom_.BorderSize = 2;
+            btnManageRoom_.FlatAppearance.BorderSize = 0;
+            btnManageRoom_.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnManageRoom_.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnManageRoom_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            btnManageRoom_.Location = new System.Drawing.Point(208, 361);
+            btnManageRoom_.Name = "btnManageRoom_" + countOfRooms;
+            btnManageRoom_.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            btnManageRoom_.Size = new System.Drawing.Size(169, 51);
+            btnManageRoom_.TabIndex = 5;
+            btnManageRoom_.Text = "مدیریت";
+            btnManageRoom_.UseVisualStyleBackColor = false;
+            btnManageRoom_.Click += new System.EventHandler(this.lblManageRoom_Click);
             // 
             // lblRoomName
             // 
-            this.lblRoomName.AutoSize = true;
-            this.lblRoomName.BackColor = System.Drawing.Color.Transparent;
-            this.lblRoomName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblRoomName.Location = new System.Drawing.Point(314, 258);
-            this.lblRoomName.Name = "lblRoomName" + countOfRooms;
-            this.lblRoomName.Size = new System.Drawing.Size(43, 25);
-            this.lblRoomName.TabIndex = 3;
-            this.lblRoomName.Text = "اتاق "+ roomName;
-            this.lblRoomName.RightToLeft =RightToLeft;
+            txtRoomName_.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
+            txtRoomName_.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtRoomName_.Cursor = System.Windows.Forms.Cursors.Default;
+            txtRoomName_.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            txtRoomName_.ForeColor = System.Drawing.Color.Peru;
+            txtRoomName_.Location = new System.Drawing.Point(190, 251);
+            txtRoomName_.Name = "txtRoomName_" + countOfRooms;
+            txtRoomName_.ReadOnly = true;
+            txtRoomName_.Size = new System.Drawing.Size(187, 40);
+            txtRoomName_.TabIndex = 10;
+            txtRoomName_.Text = "اتاق " + roomName;
+            txtRoomName_.ReadOnly = true;
+
 
             // 
             // picRoom
             // 
-            this.picRoom.BackColor = System.Drawing.Color.Silver;
-            this.picRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picRoom.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picRoom.Location = new System.Drawing.Point(0, 0);
-            this.picRoom.Name = "picRoom" + countOfRooms;
-            this.picRoom.Size = new System.Drawing.Size(383, 228);
-            this.picRoom.TabIndex = 1;
-            this.picRoom.TabStop = false;
-            this.picRoom.ImageLocation = roomPic;
-            this.picRoom.SizeMode =  PictureBoxSizeMode.StretchImage;
+            picRoom_.BackColor = System.Drawing.Color.Silver;
+            picRoom_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            picRoom_.Dock = System.Windows.Forms.DockStyle.Top;
+            picRoom_.Location = new System.Drawing.Point(0, 0);
+            picRoom_.Name = "picRoom_" + countOfRooms;
+            picRoom_.Size = new System.Drawing.Size(383, 228);
+            picRoom_.TabIndex = 1;
+            picRoom_.TabStop = false;
+            picRoom_.ImageLocation = roomPic;
+            picRoom_.SizeMode = PictureBoxSizeMode.StretchImage;
             // 
             // splitter6
             // 
-            this.splitter6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter6.Enabled = false;
-            this.splitter6.Location = new System.Drawing.Point(533, 0);
-            this.splitter6.Name = "splitter6" + countOfRooms;
-            this.splitter6.Size = new System.Drawing.Size(19, 419);
-            this.splitter6.TabIndex = 9;
-            this.splitter6.TabStop = false;
-            // 
-            // splitter9
-            // 
-            this.splitter9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
-            this.splitter9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter9.Enabled = false;
-            this.splitter9.Location = new System.Drawing.Point(363, 228);
-            this.splitter9.Name = "splitter"+ countOfRooms;
-            this.splitter9.Size = new System.Drawing.Size(20, 148);
-            this.splitter9.TabIndex = 7;
-            this.splitter9.TabStop = false;
-            // 
-            // panCardFooter
-            // 
-            this.panCardFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.panCardFooter.Controls.Add(this.btnOpenRoom);
-            this.panCardFooter.Controls.Add(this.btnManageRoom);
-            this.panCardFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panCardFooter.Location = new System.Drawing.Point(0, 376);
-            this.panCardFooter.Name = "panCardFooter" + countOfRooms;
-            this.panCardFooter.Size = new System.Drawing.Size(383, 60);
-            this.panCardFooter.TabIndex = 6;
+            splitter6_.Dock = System.Windows.Forms.DockStyle.Right;
+            splitter6_.Enabled = false;
+            splitter6_.Location = new System.Drawing.Point(533, 0);
+            splitter6_.Name = "splitter6" + countOfRooms;
+            splitter6_.Size = new System.Drawing.Size(19, 419);
+            splitter6_.TabIndex = 9;
+            splitter6_.TabStop = false;
 
 
-            panContaner.Controls.Add(panRoom);
 
-            panRoom.Controls.Add(panCardFooter);
-            panRoom.Controls.Add(splitter9);
-
-            panRoom.Controls.Add(lblRoomName);
-
-            panRoom.Controls.Add(picRoom);
-
-            panContaner.Controls.Add(splitter6);
-
-            panCardFooter.Controls.Add(btnOpenRoom);
-
-            panCardFooter.Controls.Add(btnManageRoom);
+            panContaner.Controls.Add(panRoom_);
 
 
+            panRoom_.Controls.Add(txtRoomName_);
+
+            panRoom_.Controls.Add(picRoom_);
+
+            panContaner.Controls.Add(splitter6_);
+
+            panRoom_.Controls.Add(btnOpenRoom_);
+
+            panRoom_.Controls.Add(btnManageRoom_);
+
+
+        }
+
+        public void CartCaller()
+        {
+            foreach (var cart in db.RoomsRepository.GetAllRooms()) {
+                CartGenerator(cart.ROOM_ID,cart.ROOM_NAME,cart.ROOM_PIC);
+            
+            }
         }
     }
 }

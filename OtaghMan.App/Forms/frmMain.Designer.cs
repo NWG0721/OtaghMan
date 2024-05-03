@@ -38,6 +38,8 @@
             this.txtSearch = new WiLBiT.WiLBiTTextBox();
             this.splitter7 = new System.Windows.Forms.Splitter();
             this.btnSearch = new AltoControls.AltoButton();
+            this.splitter8 = new System.Windows.Forms.Splitter();
+            this.btnAddRoom = new AltoControls.AltoButton();
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.btnRefresh = new AltoControls.AltoButton();
             this.splitter1 = new System.Windows.Forms.Splitter();
@@ -45,23 +47,23 @@
             this.splitter4 = new System.Windows.Forms.Splitter();
             this.splitter5 = new System.Windows.Forms.Splitter();
             this.panRoom = new WiLBiT.WiLBiTGradientPanel();
+            this.splitter9 = new System.Windows.Forms.Splitter();
+            this.panCardFooter = new System.Windows.Forms.Panel();
             this.btnOpenRoom = new WiLBiT.WiLBiTButton();
             this.btnManageRoom = new WiLBiT.WiLBiTButton();
             this.lblRoomName = new System.Windows.Forms.Label();
             this.picRoom = new System.Windows.Forms.PictureBox();
             this.splitter6 = new System.Windows.Forms.Splitter();
             this.panContaner = new System.Windows.Forms.Panel();
-            this.panAddnewRoom = new WiLBiT.WiLBiTGradientPanel();
-            this.btnAddnewRoom = new AltoControls.AltoButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             btnHeader = new AltoControls.AltoButton();
             this.panHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).BeginInit();
             this.panMenu.SuspendLayout();
             this.panRoom.SuspendLayout();
+            this.panCardFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRoom)).BeginInit();
             this.panContaner.SuspendLayout();
-            this.panAddnewRoom.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnHeader
@@ -165,6 +167,8 @@
             this.panMenu.Controls.Add(this.txtSearch);
             this.panMenu.Controls.Add(this.splitter7);
             this.panMenu.Controls.Add(this.btnSearch);
+            this.panMenu.Controls.Add(this.splitter8);
+            this.panMenu.Controls.Add(this.btnAddRoom);
             this.panMenu.Controls.Add(this.splitter3);
             this.panMenu.Controls.Add(this.btnRefresh);
             this.panMenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -183,7 +187,7 @@
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.Location = new System.Drawing.Point(222, 0);
+            this.txtSearch.Location = new System.Drawing.Point(333, 0);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Multiline = false;
             this.txtSearch.Name = "txtSearch";
@@ -200,7 +204,7 @@
             // splitter7
             // 
             this.splitter7.Enabled = false;
-            this.splitter7.Location = new System.Drawing.Point(205, 0);
+            this.splitter7.Location = new System.Drawing.Point(316, 0);
             this.splitter7.Name = "splitter7";
             this.splitter7.Size = new System.Drawing.Size(17, 48);
             this.splitter7.TabIndex = 13;
@@ -217,7 +221,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
             this.btnSearch.Inactive2 = System.Drawing.Color.Transparent;
-            this.btnSearch.Location = new System.Drawing.Point(111, 0);
+            this.btnSearch.Location = new System.Drawing.Point(222, 0);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Radius = 10;
             this.btnSearch.Size = new System.Drawing.Size(94, 48);
@@ -227,6 +231,37 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.Transparency = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // splitter8
+            // 
+            this.splitter8.Enabled = false;
+            this.splitter8.Location = new System.Drawing.Point(205, 0);
+            this.splitter8.Name = "splitter8";
+            this.splitter8.Size = new System.Drawing.Size(17, 48);
+            this.splitter8.TabIndex = 16;
+            this.splitter8.TabStop = false;
+            // 
+            // btnAddRoom
+            // 
+            this.btnAddRoom.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnAddRoom.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.btnAddRoom.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddRoom.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAddRoom.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAddRoom.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAddRoom.ForeColor = System.Drawing.Color.Black;
+            this.btnAddRoom.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnAddRoom.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnAddRoom.Location = new System.Drawing.Point(111, 0);
+            this.btnAddRoom.Name = "btnAddRoom";
+            this.btnAddRoom.Radius = 10;
+            this.btnAddRoom.Size = new System.Drawing.Size(94, 48);
+            this.btnAddRoom.Stroke = true;
+            this.btnAddRoom.StrokeColor = System.Drawing.Color.Peru;
+            this.btnAddRoom.TabIndex = 15;
+            this.btnAddRoom.Text = "Add Room";
+            this.btnAddRoom.Transparency = false;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
             // 
             // splitter3
             // 
@@ -305,16 +340,38 @@
             this.panRoom.BorderColor = System.Drawing.Color.Peru;
             this.panRoom.BorderRadius = 15;
             this.panRoom.BorderSize = 2;
-            this.panRoom.Controls.Add(this.btnOpenRoom);
-            this.panRoom.Controls.Add(this.btnManageRoom);
+            this.panRoom.Controls.Add(this.splitter9);
+            this.panRoom.Controls.Add(this.panCardFooter);
             this.panRoom.Controls.Add(this.lblRoomName);
             this.panRoom.Controls.Add(this.picRoom);
             this.panRoom.Dock = System.Windows.Forms.DockStyle.Right;
             this.panRoom.ForeColor = System.Drawing.Color.Peru;
-            this.panRoom.Location = new System.Drawing.Point(552, 0);
+            this.panRoom.Location = new System.Drawing.Point(369, 0);
             this.panRoom.Name = "panRoom";
-            this.panRoom.Size = new System.Drawing.Size(383, 419);
+            this.panRoom.Size = new System.Drawing.Size(383, 436);
             this.panRoom.TabIndex = 4;
+            // 
+            // splitter9
+            // 
+            this.splitter9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
+            this.splitter9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter9.Enabled = false;
+            this.splitter9.Location = new System.Drawing.Point(363, 228);
+            this.splitter9.Name = "splitter9";
+            this.splitter9.Size = new System.Drawing.Size(20, 148);
+            this.splitter9.TabIndex = 7;
+            this.splitter9.TabStop = false;
+            // 
+            // panCardFooter
+            // 
+            this.panCardFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.panCardFooter.Controls.Add(this.btnOpenRoom);
+            this.panCardFooter.Controls.Add(this.btnManageRoom);
+            this.panCardFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panCardFooter.Location = new System.Drawing.Point(0, 376);
+            this.panCardFooter.Name = "panCardFooter";
+            this.panCardFooter.Size = new System.Drawing.Size(383, 60);
+            this.panCardFooter.TabIndex = 6;
             // 
             // btnOpenRoom
             // 
@@ -326,7 +383,7 @@
             this.btnOpenRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpenRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.btnOpenRoom.Location = new System.Drawing.Point(6, 354);
+            this.btnOpenRoom.Location = new System.Drawing.Point(6, 3);
             this.btnOpenRoom.Name = "btnOpenRoom";
             this.btnOpenRoom.Size = new System.Drawing.Size(169, 51);
             this.btnOpenRoom.TabIndex = 5;
@@ -343,7 +400,7 @@
             this.btnManageRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.btnManageRoom.Location = new System.Drawing.Point(208, 354);
+            this.btnManageRoom.Location = new System.Drawing.Point(208, 3);
             this.btnManageRoom.Name = "btnManageRoom";
             this.btnManageRoom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnManageRoom.Size = new System.Drawing.Size(169, 51);
@@ -357,7 +414,7 @@
             this.lblRoomName.AutoSize = true;
             this.lblRoomName.BackColor = System.Drawing.Color.Transparent;
             this.lblRoomName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblRoomName.Location = new System.Drawing.Point(313, 279);
+            this.lblRoomName.Location = new System.Drawing.Point(314, 258);
             this.lblRoomName.Name = "lblRoomName";
             this.lblRoomName.Size = new System.Drawing.Size(43, 25);
             this.lblRoomName.TabIndex = 3;
@@ -371,6 +428,7 @@
             this.picRoom.Location = new System.Drawing.Point(0, 0);
             this.picRoom.Name = "picRoom";
             this.picRoom.Size = new System.Drawing.Size(383, 228);
+            this.picRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRoom.TabIndex = 1;
             this.picRoom.TabStop = false;
             // 
@@ -378,9 +436,9 @@
             // 
             this.splitter6.Dock = System.Windows.Forms.DockStyle.Right;
             this.splitter6.Enabled = false;
-            this.splitter6.Location = new System.Drawing.Point(533, 0);
+            this.splitter6.Location = new System.Drawing.Point(350, 0);
             this.splitter6.Name = "splitter6";
-            this.splitter6.Size = new System.Drawing.Size(19, 419);
+            this.splitter6.Size = new System.Drawing.Size(19, 436);
             this.splitter6.TabIndex = 9;
             this.splitter6.TabStop = false;
             // 
@@ -389,7 +447,6 @@
             this.panContaner.AutoScroll = true;
             this.panContaner.AutoScrollMargin = new System.Drawing.Size(100, 10);
             this.panContaner.AutoScrollMinSize = new System.Drawing.Size(50, 10);
-            this.panContaner.Controls.Add(this.panAddnewRoom);
             this.panContaner.Controls.Add(this.splitter6);
             this.panContaner.Controls.Add(this.panRoom);
             this.panContaner.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -398,44 +455,6 @@
             this.panContaner.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panContaner.Size = new System.Drawing.Size(752, 436);
             this.panContaner.TabIndex = 11;
-            // 
-            // panAddnewRoom
-            // 
-            this.panAddnewRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(203)))), ((int)(((byte)(160)))), ((int)(((byte)(128)))));
-            this.panAddnewRoom.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(246)))), ((int)(((byte)(237)))), ((int)(((byte)(60)))));
-            this.panAddnewRoom.BorderColor = System.Drawing.Color.Peru;
-            this.panAddnewRoom.BorderRadius = 15;
-            this.panAddnewRoom.BorderSize = 2;
-            this.panAddnewRoom.Controls.Add(this.btnAddnewRoom);
-            this.panAddnewRoom.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panAddnewRoom.ForeColor = System.Drawing.Color.Peru;
-            this.panAddnewRoom.Location = new System.Drawing.Point(150, 0);
-            this.panAddnewRoom.Name = "panAddnewRoom";
-            this.panAddnewRoom.Size = new System.Drawing.Size(383, 419);
-            this.panAddnewRoom.TabIndex = 10;
-            // 
-            // btnAddnewRoom
-            // 
-            this.btnAddnewRoom.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnAddnewRoom.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
-            this.btnAddnewRoom.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
-            this.btnAddnewRoom.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddnewRoom.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAddnewRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddnewRoom.Font = new System.Drawing.Font("Comic Sans MS", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddnewRoom.ForeColor = System.Drawing.Color.Peru;
-            this.btnAddnewRoom.Inactive1 = System.Drawing.Color.Transparent;
-            this.btnAddnewRoom.Inactive2 = System.Drawing.Color.Transparent;
-            this.btnAddnewRoom.Location = new System.Drawing.Point(0, 0);
-            this.btnAddnewRoom.Name = "btnAddnewRoom";
-            this.btnAddnewRoom.Radius = 15;
-            this.btnAddnewRoom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnAddnewRoom.Size = new System.Drawing.Size(383, 419);
-            this.btnAddnewRoom.Stroke = false;
-            this.btnAddnewRoom.StrokeColor = System.Drawing.Color.Peru;
-            this.btnAddnewRoom.TabIndex = 0;
-            this.btnAddnewRoom.Text = "+";
-            this.btnAddnewRoom.Transparency = false;
             // 
             // timer1
             // 
@@ -464,9 +483,9 @@
             this.panMenu.ResumeLayout(false);
             this.panRoom.ResumeLayout(false);
             this.panRoom.PerformLayout();
+            this.panCardFooter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picRoom)).EndInit();
             this.panContaner.ResumeLayout(false);
-            this.panAddnewRoom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -489,13 +508,15 @@
         private System.Windows.Forms.PictureBox picRoom;
         private System.Windows.Forms.Splitter splitter6;
         private System.Windows.Forms.Panel panContaner;
-        private WiLBiT.WiLBiTGradientPanel panAddnewRoom;
-        private AltoControls.AltoButton btnAddnewRoom;
         private System.Windows.Forms.Splitter splitter7;
         private AltoControls.AltoButton btnSearch;
         private System.Windows.Forms.Splitter splitter3;
-        private AltoControls.AltoButton btnRefresh;
         private WiLBiT.WiLBiTTextBox txtSearch;
         private System.Windows.Forms.Timer timer1;
+        private AltoControls.AltoButton btnRefresh;
+        private System.Windows.Forms.Splitter splitter8;
+        private AltoControls.AltoButton btnAddRoom;
+        private System.Windows.Forms.Splitter splitter9;
+        private System.Windows.Forms.Panel panCardFooter;
     }
 }

@@ -28,127 +28,185 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.wiLBiTPanel1 = new WiLBiT.WiLBiTPanel();
-            this.wiLBiTPanel2 = new WiLBiT.WiLBiTPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panPicBox = new WiLBiT.WiLBiTPanel();
+            this.picRoomPicture = new System.Windows.Forms.PictureBox();
+            this.btnAddPicture = new AltoControls.AltoButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtRoomName = new AltoControls.AltoTextBox();
+            this.lblRoomName = new System.Windows.Forms.Label();
+            this.panDown = new System.Windows.Forms.Panel();
+            this.altoButton3 = new AltoControls.AltoButton();
             this.altoButton1 = new AltoControls.AltoButton();
-            this.altoButton2 = new AltoControls.AltoButton();
-            this.wiLBiTPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panPicBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomPicture)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panDown.SuspendLayout();
             this.SuspendLayout();
             // 
-            // wiLBiTPanel1
+            // panPicBox
             // 
-            this.wiLBiTPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(116)))), ((int)(((byte)(245)))));
-            this.wiLBiTPanel1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.wiLBiTPanel1.BorderRadius = 6;
-            this.wiLBiTPanel1.BorderSize = 0;
-            this.wiLBiTPanel1.Controls.Add(this.pictureBox1);
-            this.wiLBiTPanel1.Controls.Add(this.panel2);
-            this.wiLBiTPanel1.ForeColor = System.Drawing.Color.White;
-            this.wiLBiTPanel1.Location = new System.Drawing.Point(12, 12);
-            this.wiLBiTPanel1.Name = "wiLBiTPanel1";
-            this.wiLBiTPanel1.Size = new System.Drawing.Size(251, 338);
-            this.wiLBiTPanel1.TabIndex = 0;
+            this.panPicBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(190)))));
+            this.panPicBox.BorderColor = System.Drawing.Color.Peru;
+            this.panPicBox.BorderRadius = 20;
+            this.panPicBox.BorderSize = 0;
+            this.panPicBox.Controls.Add(this.picRoomPicture);
+            this.panPicBox.Controls.Add(this.btnAddPicture);
+            this.panPicBox.Controls.Add(this.panel1);
+            this.panPicBox.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.panPicBox.Location = new System.Drawing.Point(12, 12);
+            this.panPicBox.Name = "panPicBox";
+            this.panPicBox.Size = new System.Drawing.Size(316, 340);
+            this.panPicBox.TabIndex = 1;
             // 
-            // wiLBiTPanel2
+            // picRoomPicture
             // 
-            this.wiLBiTPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(116)))), ((int)(((byte)(245)))));
-            this.wiLBiTPanel2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.wiLBiTPanel2.BorderRadius = 6;
-            this.wiLBiTPanel2.BorderSize = 0;
-            this.wiLBiTPanel2.ForeColor = System.Drawing.Color.White;
-            this.wiLBiTPanel2.Location = new System.Drawing.Point(269, 100);
-            this.wiLBiTPanel2.Name = "wiLBiTPanel2";
-            this.wiLBiTPanel2.Size = new System.Drawing.Size(251, 338);
-            this.wiLBiTPanel2.TabIndex = 1;
+            this.picRoomPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picRoomPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picRoomPicture.Location = new System.Drawing.Point(0, 57);
+            this.picRoomPicture.Name = "picRoomPicture";
+            this.picRoomPicture.Size = new System.Drawing.Size(316, 239);
+            this.picRoomPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRoomPicture.TabIndex = 4;
+            this.picRoomPicture.TabStop = false;
             // 
-            // pictureBox1
+            // btnAddPicture
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(251, 280);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnAddPicture.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.btnAddPicture.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnAddPicture.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddPicture.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAddPicture.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAddPicture.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPicture.ForeColor = System.Drawing.Color.Peru;
+            this.btnAddPicture.Inactive1 = System.Drawing.Color.Transparent;
+            this.btnAddPicture.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnAddPicture.Location = new System.Drawing.Point(0, 296);
+            this.btnAddPicture.Name = "btnAddPicture";
+            this.btnAddPicture.Radius = 20;
+            this.btnAddPicture.Size = new System.Drawing.Size(316, 44);
+            this.btnAddPicture.Stroke = true;
+            this.btnAddPicture.StrokeColor = System.Drawing.Color.Peru;
+            this.btnAddPicture.TabIndex = 3;
+            this.btnAddPicture.Text = "انتخاب تصویر";
+            this.btnAddPicture.Transparency = false;
+            this.btnAddPicture.Click += new System.EventHandler(this.btnAddPicture_Click);
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.Controls.Add(this.altoButton2);
-            this.panel2.Controls.Add(this.altoButton1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 280);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 58);
-            this.panel2.TabIndex = 2;
+            this.panel1.Controls.Add(this.txtRoomName);
+            this.panel1.Controls.Add(this.lblRoomName);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(316, 57);
+            this.panel1.TabIndex = 0;
+            // 
+            // txtRoomName
+            // 
+            this.txtRoomName.BackColor = System.Drawing.Color.Transparent;
+            this.txtRoomName.Br = System.Drawing.Color.White;
+            this.txtRoomName.Font = new System.Drawing.Font("B Yekan", 14.25F);
+            this.txtRoomName.ForeColor = System.Drawing.Color.Black;
+            this.txtRoomName.Location = new System.Drawing.Point(76, 18);
+            this.txtRoomName.Name = "txtRoomName";
+            this.txtRoomName.Size = new System.Drawing.Size(135, 33);
+            this.txtRoomName.TabIndex = 2;
+            // 
+            // lblRoomName
+            // 
+            this.lblRoomName.AutoSize = true;
+            this.lblRoomName.Font = new System.Drawing.Font("B Yekan", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblRoomName.ForeColor = System.Drawing.Color.Peru;
+            this.lblRoomName.Location = new System.Drawing.Point(228, 18);
+            this.lblRoomName.Name = "lblRoomName";
+            this.lblRoomName.Size = new System.Drawing.Size(73, 29);
+            this.lblRoomName.TabIndex = 1;
+            this.lblRoomName.Text = "اسم اتاق";
+            // 
+            // panDown
+            // 
+            this.panDown.Controls.Add(this.altoButton3);
+            this.panDown.Controls.Add(this.altoButton1);
+            this.panDown.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panDown.Location = new System.Drawing.Point(0, 394);
+            this.panDown.Name = "panDown";
+            this.panDown.Size = new System.Drawing.Size(340, 56);
+            this.panDown.TabIndex = 2;
+            // 
+            // altoButton3
+            // 
+            this.altoButton3.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.altoButton3.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.altoButton3.BackColor = System.Drawing.Color.Transparent;
+            this.altoButton3.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.altoButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.altoButton3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.altoButton3.ForeColor = System.Drawing.Color.Peru;
+            this.altoButton3.Inactive1 = System.Drawing.Color.Transparent;
+            this.altoButton3.Inactive2 = System.Drawing.Color.Transparent;
+            this.altoButton3.Location = new System.Drawing.Point(169, 0);
+            this.altoButton3.Name = "altoButton3";
+            this.altoButton3.Radius = 20;
+            this.altoButton3.Size = new System.Drawing.Size(171, 56);
+            this.altoButton3.Stroke = true;
+            this.altoButton3.StrokeColor = System.Drawing.Color.Peru;
+            this.altoButton3.TabIndex = 4;
+            this.altoButton3.Text = "بنداز بره";
+            this.altoButton3.Transparency = false;
+            this.altoButton3.Click += new System.EventHandler(this.altoButton3_Click);
             // 
             // altoButton1
             // 
-            this.altoButton1.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.altoButton1.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.altoButton1.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.altoButton1.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
             this.altoButton1.BackColor = System.Drawing.Color.Transparent;
             this.altoButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.altoButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.altoButton1.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
-            this.altoButton1.ForeColor = System.Drawing.Color.Black;
-            this.altoButton1.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.altoButton1.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.altoButton1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.altoButton1.ForeColor = System.Drawing.Color.Peru;
+            this.altoButton1.Inactive1 = System.Drawing.Color.Transparent;
+            this.altoButton1.Inactive2 = System.Drawing.Color.Transparent;
             this.altoButton1.Location = new System.Drawing.Point(0, 0);
             this.altoButton1.Name = "altoButton1";
-            this.altoButton1.Radius = 10;
-            this.altoButton1.Size = new System.Drawing.Size(122, 58);
-            this.altoButton1.Stroke = false;
-            this.altoButton1.StrokeColor = System.Drawing.Color.Gray;
-            this.altoButton1.TabIndex = 2;
-            this.altoButton1.Text = "altoButton1";
-            this.altoButton1.Transparency = false;
-            // 
-            // altoButton2
-            // 
-            this.altoButton2.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.altoButton2.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.altoButton2.BackColor = System.Drawing.Color.Transparent;
-            this.altoButton2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.altoButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.altoButton2.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
-            this.altoButton2.ForeColor = System.Drawing.Color.Black;
-            this.altoButton2.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.altoButton2.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.altoButton2.Location = new System.Drawing.Point(122, 0);
-            this.altoButton2.Name = "altoButton2";
-            this.altoButton2.Radius = 10;
-            this.altoButton2.Size = new System.Drawing.Size(129, 58);
-            this.altoButton2.Stroke = false;
-            this.altoButton2.StrokeColor = System.Drawing.Color.Gray;
-            this.altoButton2.TabIndex = 3;
-            this.altoButton2.Text = "altoButton2";
-            this.altoButton2.Transparency = false;
+            this.altoButton1.Radius = 20;
+            this.altoButton1.Size = new System.Drawing.Size(169, 56);
+            this.altoButton1.Stroke = true;
+            this.altoButton1.StrokeColor = System.Drawing.Color.Peru;
+            this.altoButton1.TabIndex = 5;
+            this.altoButton1.Text = "حله";
+            this.altoButton1.Transparency = true;
+            this.altoButton1.Click += new System.EventHandler(this.altoButton1_Click);
             // 
             // frmAddEditRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 450);
-            this.Controls.Add(this.wiLBiTPanel2);
-            this.Controls.Add(this.wiLBiTPanel1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
+            this.ClientSize = new System.Drawing.Size(340, 450);
+            this.Controls.Add(this.panDown);
+            this.Controls.Add(this.panPicBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddEditRoom";
-            this.Text = "frmAddEditRoom";
-            this.wiLBiTPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.panPicBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picRoomPicture)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panDown.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private WiLBiT.WiLBiTPanel wiLBiTPanel1;
-        private WiLBiT.WiLBiTPanel wiLBiTPanel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
-        private AltoControls.AltoButton altoButton2;
+        private WiLBiT.WiLBiTPanel panPicBox;
+        private System.Windows.Forms.Label lblRoomName;
+        private System.Windows.Forms.Panel panDown;
+        private AltoControls.AltoButton altoButton3;
         private AltoControls.AltoButton altoButton1;
+        private System.Windows.Forms.PictureBox picRoomPicture;
+        private AltoControls.AltoButton btnAddPicture;
+        private System.Windows.Forms.Panel panel1;
+        private AltoControls.AltoTextBox txtRoomName;
     }
 }

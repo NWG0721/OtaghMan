@@ -22,6 +22,7 @@
           </Key>
           <Property Name="ROOM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ROOM_NAME" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ROOM_PIC" Type="nchar" MaxLength="260" Nullable="false" />
         </EntityType>
         <EntityType Name="Storages_tbl">
           <Key>
@@ -133,6 +134,7 @@
           <Property Name="ROOM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ROOM_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Storages_tbl" Relationship="Self.Storages_To_Rooms" FromRole="Rooms_tbl" ToRole="Storages_tbl" />
+          <Property Name="ROOM_PIC" Type="String" MaxLength="260" FixedLength="true" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Storages_tbl">
           <Key>
@@ -244,6 +246,7 @@
           <EntitySetMapping Name="Rooms_tbl">
             <EntityTypeMapping TypeName="OtaghMan_DBModel.Rooms_tbl">
               <MappingFragment StoreEntitySet="Rooms_tbl">
+                <ScalarProperty Name="ROOM_PIC" ColumnName="ROOM_PIC" />
                 <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
                 <ScalarProperty Name="ROOM_NAME" ColumnName="ROOM_NAME" />
               </MappingFragment>

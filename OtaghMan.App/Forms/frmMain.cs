@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using OtaghMan.Data;
+using OtaghMan.Data.Context;
 
 
 namespace OtaghMan.App
@@ -40,6 +42,12 @@ namespace OtaghMan.App
         //
         //For moving form
         //
+
+
+        Rooms_tbl rooms;
+        RoomsUnit db;
+
+
 
         public frmMain()
         {
@@ -98,12 +106,20 @@ namespace OtaghMan.App
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            panContaner.Controls.Clear();
-            for (int i = 0; i < 10; i++)
+            rooms = new Rooms_tbl();
+            List<Rooms_tbl> roomsList = new List<Rooms_tbl>();
+            db = new RoomsUnit();
+            roomsList = db.RoomsRepository.GetAllRooms().ToList();
+            foreach (var room in roomsList)
             {
-            CartGenerator(i,$"Nima"+i);
-
+                CartGenerator(room.ROOM_ID,room.ROOM_NAME,room.ROOM_PIC);
             }
+        }
+
+        private void btnAddRoom_Click(object sender, EventArgs e)
+        {
+            frmAddEditRoom frmAdd = new frmAddEditRoom();
+            frmAdd.ShowDialog();
         }
     }
 }

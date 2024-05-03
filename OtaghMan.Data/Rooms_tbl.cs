@@ -22,6 +22,7 @@ namespace OtaghMan.Data
     
         public int ROOM_ID { get; set; }
         public string ROOM_NAME { get; set; }
+        public string ROOM_PIC { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Storages_tbl> Storages_tbl { get; set; }

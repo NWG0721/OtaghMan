@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OtaghMan.Data.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -135,6 +136,8 @@ namespace OtaghMan.App
 
         public void CartCaller()
         {
+            panContaner.Controls.Clear();
+            db = new RoomsUnit();
             foreach (var cart in db.RoomsRepository.GetAllRooms()) {
                 CartGenerator(cart.ROOM_ID,cart.ROOM_NAME,cart.ROOM_PIC);
             

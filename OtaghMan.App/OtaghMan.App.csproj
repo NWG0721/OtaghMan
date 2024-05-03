@@ -86,6 +86,9 @@
     <Compile Include="Classes\BackEnd\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Classes\BackEnd\frmStorages.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Classes\FrontEnd\Front.Code.1.1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -95,11 +98,29 @@
     <Compile Include="Forms\frmAddEditRoom.Designer.cs">
       <DependentUpon>frmAddEditRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmClickRightForStorageAndEquip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmClickRightForStorageAndEquip.Designer.cs">
+      <DependentUpon>frmClickRightForStorageAndEquip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmManage.Designer.cs">
+      <DependentUpon>frmManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmStorages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmStorages.Designer.cs">
+      <DependentUpon>frmStorages.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Sgining.cs">
       <SubType>Form</SubType>
@@ -112,8 +133,17 @@
     <EmbeddedResource Include="Forms\frmAddEditRoom.resx">
       <DependentUpon>frmAddEditRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmClickRightForStorageAndEquip.resx">
+      <DependentUpon>frmClickRightForStorageAndEquip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmManage.resx">
+      <DependentUpon>frmManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmStorages.resx">
+      <DependentUpon>frmStorages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Sgining.resx">
       <DependentUpon>Sgining.cs</DependentUpon>

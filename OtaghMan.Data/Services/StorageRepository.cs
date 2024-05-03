@@ -66,15 +66,17 @@ namespace OtaghMan.Data.Services
             return db.Storages_tbl.Find(storageId);
         }
 
-        public void SaveChanges()
-        {
-            db.SaveChanges();
-        }
+
 
         public bool UpdateStorageInfo(Storages_tbl Storage)
         {
             try
             {
+                var local = db.Set<Storages_tbl>().Local.FirstOrDefault(f => f.STORAGE_ID == Storage.STORAGE_ID);
+                if (local != null)
+                {
+                    db.Entry(local).State = EntityState.Detached;
+                }
                 db.Entry(Storage).State = EntityState.Modified;
                 return true;
             }

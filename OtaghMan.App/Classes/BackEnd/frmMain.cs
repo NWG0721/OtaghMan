@@ -56,6 +56,7 @@ namespace OtaghMan.App
             btnOpenRoom_.TabIndex = 5;
             btnOpenRoom_.Text = "بازکردن";
             btnOpenRoom_.UseVisualStyleBackColor = false;
+            btnOpenRoom_.MouseClick += new MouseEventHandler(btnOpenRooms_MouseClick);
             // 
             // btnManageRoom
             // 
@@ -74,7 +75,7 @@ namespace OtaghMan.App
             btnManageRoom_.TabIndex = 5;
             btnManageRoom_.Text = "مدیریت";
             btnManageRoom_.UseVisualStyleBackColor = false;
-            btnManageRoom_.Click += new System.EventHandler(this.lblManageRoom_Click);
+            btnManageRoom_.MouseClick += new MouseEventHandler(btnManageRooms_MouseClick);
             // 
             // lblRoomName
             // 

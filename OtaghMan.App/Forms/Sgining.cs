@@ -123,7 +123,7 @@ namespace OtaghMan.App
                     else
                     {
                         lblBadUserPass.Visible = false;
-                        Thread.Sleep(2000);
+                        Thread.Sleep(500);
                         this.Hide();
                         main.Show();
                     }

@@ -38,7 +38,6 @@ namespace OtaghMan.Data.Repositories
 
         //------------------------------| SAVECHANGES |------------------------------//
 
-        void SaveChanges();
 
         //------------------------------| SAVECHANGES |------------------------------//
 

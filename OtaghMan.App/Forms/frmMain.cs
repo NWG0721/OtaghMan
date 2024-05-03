@@ -12,6 +12,9 @@ using System.IO;
 using System.Diagnostics;
 using OtaghMan.Data;
 using OtaghMan.Data.Context;
+using System.Reflection;
+using System.Web.UI.WebControls;
+using OtaghMan.App.Forms;
 
 
 namespace OtaghMan.App
@@ -46,6 +49,7 @@ namespace OtaghMan.App
 
         Rooms_tbl rooms;
         RoomsUnit db;
+        public int index = 0;
 
 
 
@@ -81,19 +85,20 @@ namespace OtaghMan.App
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            txtSearch.Texts = "";
             if (txtSearchIsVisible)
             {
-                txtSearch.Width = txtSearch.Width-10;
-                if (txtSearch.Width ==0)
+                txtSearch.Width = txtSearch.Width - 10;
+                if (txtSearch.Width == 0)
                 {
-                txtSearch.Visible = !txtSearch.Visible;
+                    txtSearch.Visible = !txtSearch.Visible;
                     txtSearchIsVisible = false;
                     timer1.Enabled = false;
                 }
             }
             else
             {
-            txtSearch.Visible = !txtSearch.Visible;
+                txtSearch.Visible = !txtSearch.Visible;
                 txtSearch.Width = txtSearch.Width + 10;
                 if (txtSearch.Width == 250)
                 {
@@ -106,20 +111,89 @@ namespace OtaghMan.App
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            rooms = new Rooms_tbl();
-            List<Rooms_tbl> roomsList = new List<Rooms_tbl>();
-            db = new RoomsUnit();
-            roomsList = db.RoomsRepository.GetAllRooms().ToList();
-            foreach (var room in roomsList)
-            {
-                CartGenerator(room.ROOM_ID,room.ROOM_NAME,room.ROOM_PIC);
-            }
+            CartCaller();
         }
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
             frmAddEditRoom frmAdd = new frmAddEditRoom();
             frmAdd.ShowDialog();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            CartCaller();
+        }
+        
+
+
+
+
+        private int GetIndexFromButtonName(string name, string fullName)
+        {
+
+
+            if (name.StartsWith(fullName))
+
+            {
+
+                string indexStr = name.Substring(fullName.Length);
+
+                if (int.TryParse(indexStr, out int index))
+
+                {
+
+                    return index;
+
+                }
+
+            }
+
+            return -1;
+
+        }
+
+        private void btnOpenRooms_MouseClick(object sender, MouseEventArgs e)
+        {
+            WiLBiT.WiLBiTButton btn = sender as WiLBiT.WiLBiTButton;
+            index = GetIndexFromButtonName(btn.Name, "btnOpenRoom_");
+            Rooms_tbl room = new Rooms_tbl(); 
+            room = db.RoomsRepository.GetRoomByID(index);
+            if (e.Button == MouseButtons.Left)
+            {
+                frmStorages storages = new frmStorages(room);
+                this.Hide();
+                storages.ShowDialog();
+            }
+        }
+
+        private void txtSearch__TextChanged(object sender, EventArgs e)
+        {
+            db = new RoomsUnit();
+            
+            foreach (var room in db.RoomsRepository.GetRoomsByFillter(txtSearch.Texts))
+            {
+                CartGenerator(room.ROOM_ID, room.ROOM_NAME, room.ROOM_PIC);
+            }
+
+        }
+
+
+
+        private void btnManageRooms_MouseClick(object sender, MouseEventArgs e)
+        {
+            WiLBiT.WiLBiTButton btn = sender as WiLBiT.WiLBiTButton;
+            index = GetIndexFromButtonName(btn.Name, "btnManageRoom_");
+            if (e.Button == MouseButtons.Left)
+            {
+                frmManage manage = new frmManage(index);
+                manage.Show();
+                if (manage.DialogResult == DialogResult.Yes)
+                {
+                    CartCaller();
+                    MessageBox.Show("OK");
+                }
+            }
         }
     }
 }

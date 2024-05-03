@@ -53,7 +53,7 @@ namespace OtaghMan.App
                 ROOM_PIC = finalPath
             };
             db.RoomsRepository.AddRoom(room);
-            db.RoomsRepository.SaveChanges();
+            db.SaveChanges();
             db.Dispose();
             this.Close();
         }
@@ -62,6 +62,11 @@ namespace OtaghMan.App
         {
             db.Dispose();
             this.Close();
+        }
+
+        private void frmAddEditRoom_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

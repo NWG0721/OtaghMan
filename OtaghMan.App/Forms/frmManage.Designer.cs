@@ -1,6 +1,6 @@
 ﻿namespace OtaghMan.App
 {
-    partial class frmAddEditRoom
+    partial class frmManage
     {
         /// <summary>
         /// Required designer variable.
@@ -35,8 +35,9 @@
             this.txtRoomName = new AltoControls.AltoTextBox();
             this.lblRoomName = new System.Windows.Forms.Label();
             this.panDown = new System.Windows.Forms.Panel();
-            this.altoButton3 = new AltoControls.AltoButton();
-            this.altoButton1 = new AltoControls.AltoButton();
+            this.btnClose = new AltoControls.AltoButton();
+            this.btnOK = new AltoControls.AltoButton();
+            this.btnDeleteRoom = new AltoControls.AltoButton();
             this.panPicBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRoomPicture)).BeginInit();
             this.panel1.SuspendLayout();
@@ -55,8 +56,8 @@
             this.panPicBox.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.panPicBox.Location = new System.Drawing.Point(12, 12);
             this.panPicBox.Name = "panPicBox";
-            this.panPicBox.Size = new System.Drawing.Size(316, 340);
-            this.panPicBox.TabIndex = 1;
+            this.panPicBox.Size = new System.Drawing.Size(396, 340);
+            this.panPicBox.TabIndex = 3;
             // 
             // picRoomPicture
             // 
@@ -64,7 +65,7 @@
             this.picRoomPicture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picRoomPicture.Location = new System.Drawing.Point(0, 57);
             this.picRoomPicture.Name = "picRoomPicture";
-            this.picRoomPicture.Size = new System.Drawing.Size(316, 239);
+            this.picRoomPicture.Size = new System.Drawing.Size(396, 239);
             this.picRoomPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picRoomPicture.TabIndex = 4;
             this.picRoomPicture.TabStop = false;
@@ -83,7 +84,7 @@
             this.btnAddPicture.Location = new System.Drawing.Point(0, 296);
             this.btnAddPicture.Name = "btnAddPicture";
             this.btnAddPicture.Radius = 20;
-            this.btnAddPicture.Size = new System.Drawing.Size(316, 44);
+            this.btnAddPicture.Size = new System.Drawing.Size(396, 44);
             this.btnAddPicture.Stroke = true;
             this.btnAddPicture.StrokeColor = System.Drawing.Color.Peru;
             this.btnAddPicture.TabIndex = 3;
@@ -98,7 +99,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(316, 57);
+            this.panel1.Size = new System.Drawing.Size(396, 57);
             this.panel1.TabIndex = 0;
             // 
             // txtRoomName
@@ -125,71 +126,92 @@
             // 
             // panDown
             // 
-            this.panDown.Controls.Add(this.altoButton3);
-            this.panDown.Controls.Add(this.altoButton1);
+            this.panDown.Controls.Add(this.btnClose);
+            this.panDown.Controls.Add(this.btnOK);
             this.panDown.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panDown.Location = new System.Drawing.Point(0, 394);
+            this.panDown.Location = new System.Drawing.Point(0, 414);
             this.panDown.Name = "panDown";
-            this.panDown.Size = new System.Drawing.Size(340, 56);
-            this.panDown.TabIndex = 2;
+            this.panDown.Size = new System.Drawing.Size(420, 56);
+            this.panDown.TabIndex = 4;
             // 
-            // altoButton3
+            // btnClose
             // 
-            this.altoButton3.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.altoButton3.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
-            this.altoButton3.BackColor = System.Drawing.Color.Transparent;
-            this.altoButton3.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.altoButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.altoButton3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altoButton3.ForeColor = System.Drawing.Color.Peru;
-            this.altoButton3.Inactive1 = System.Drawing.Color.Transparent;
-            this.altoButton3.Inactive2 = System.Drawing.Color.Transparent;
-            this.altoButton3.Location = new System.Drawing.Point(169, 0);
-            this.altoButton3.Name = "altoButton3";
-            this.altoButton3.Radius = 20;
-            this.altoButton3.Size = new System.Drawing.Size(171, 56);
-            this.altoButton3.Stroke = true;
-            this.altoButton3.StrokeColor = System.Drawing.Color.Peru;
-            this.altoButton3.TabIndex = 4;
-            this.altoButton3.Text = "بنداز بره";
-            this.altoButton3.Transparency = false;
-            this.altoButton3.Click += new System.EventHandler(this.altoButton3_Click);
+            this.btnClose.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.btnClose.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClose.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.Peru;
+            this.btnClose.Inactive1 = System.Drawing.Color.Transparent;
+            this.btnClose.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnClose.Location = new System.Drawing.Point(169, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Radius = 20;
+            this.btnClose.Size = new System.Drawing.Size(251, 56);
+            this.btnClose.Stroke = true;
+            this.btnClose.StrokeColor = System.Drawing.Color.Peru;
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "بنداز بره";
+            this.btnClose.Transparency = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // altoButton1
+            // btnOK
             // 
-            this.altoButton1.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.altoButton1.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
-            this.altoButton1.BackColor = System.Drawing.Color.Transparent;
-            this.altoButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.altoButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.altoButton1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altoButton1.ForeColor = System.Drawing.Color.Peru;
-            this.altoButton1.Inactive1 = System.Drawing.Color.Transparent;
-            this.altoButton1.Inactive2 = System.Drawing.Color.Transparent;
-            this.altoButton1.Location = new System.Drawing.Point(0, 0);
-            this.altoButton1.Name = "altoButton1";
-            this.altoButton1.Radius = 20;
-            this.altoButton1.Size = new System.Drawing.Size(169, 56);
-            this.altoButton1.Stroke = true;
-            this.altoButton1.StrokeColor = System.Drawing.Color.Peru;
-            this.altoButton1.TabIndex = 5;
-            this.altoButton1.Text = "حله";
-            this.altoButton1.Transparency = true;
-            this.altoButton1.Click += new System.EventHandler(this.altoButton1_Click);
+            this.btnOK.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.btnOK.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnOK.BackColor = System.Drawing.Color.Transparent;
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOK.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnOK.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.ForeColor = System.Drawing.Color.Peru;
+            this.btnOK.Inactive1 = System.Drawing.Color.Transparent;
+            this.btnOK.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnOK.Location = new System.Drawing.Point(0, 0);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Radius = 20;
+            this.btnOK.Size = new System.Drawing.Size(169, 56);
+            this.btnOK.Stroke = true;
+            this.btnOK.StrokeColor = System.Drawing.Color.Peru;
+            this.btnOK.TabIndex = 5;
+            this.btnOK.Text = "حله";
+            this.btnOK.Transparency = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // frmAddEditRoom
+            // btnDeleteRoom
+            // 
+            this.btnDeleteRoom.Active1 = System.Drawing.Color.Red;
+            this.btnDeleteRoom.Active2 = System.Drawing.Color.DarkRed;
+            this.btnDeleteRoom.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteRoom.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnDeleteRoom.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteRoom.ForeColor = System.Drawing.Color.Red;
+            this.btnDeleteRoom.Inactive1 = System.Drawing.Color.Transparent;
+            this.btnDeleteRoom.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnDeleteRoom.Location = new System.Drawing.Point(12, 371);
+            this.btnDeleteRoom.Name = "btnDeleteRoom";
+            this.btnDeleteRoom.Radius = 20;
+            this.btnDeleteRoom.Size = new System.Drawing.Size(132, 37);
+            this.btnDeleteRoom.Stroke = true;
+            this.btnDeleteRoom.StrokeColor = System.Drawing.Color.Peru;
+            this.btnDeleteRoom.TabIndex = 6;
+            this.btnDeleteRoom.Text = "پاکیدن";
+            this.btnDeleteRoom.Transparency = true;
+            this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
+            // 
+            // frmManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
-            this.ClientSize = new System.Drawing.Size(340, 450);
-            this.Controls.Add(this.panDown);
+            this.ClientSize = new System.Drawing.Size(420, 470);
+            this.Controls.Add(this.btnDeleteRoom);
             this.Controls.Add(this.panPicBox);
+            this.Controls.Add(this.panDown);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAddEditRoom";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmAddEditRoom_Load);
+            this.Name = "frmManage";
+            this.Text = "frmManage";
+            this.Load += new System.EventHandler(this.frmManage_Load);
             this.panPicBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picRoomPicture)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -200,14 +222,16 @@
         }
 
         #endregion
+
         private WiLBiT.WiLBiTPanel panPicBox;
-        private System.Windows.Forms.Label lblRoomName;
-        private System.Windows.Forms.Panel panDown;
-        private AltoControls.AltoButton altoButton3;
-        private AltoControls.AltoButton altoButton1;
         private System.Windows.Forms.PictureBox picRoomPicture;
         private AltoControls.AltoButton btnAddPicture;
         private System.Windows.Forms.Panel panel1;
         private AltoControls.AltoTextBox txtRoomName;
+        private System.Windows.Forms.Label lblRoomName;
+        private System.Windows.Forms.Panel panDown;
+        private AltoControls.AltoButton btnClose;
+        private AltoControls.AltoButton btnOK;
+        private AltoControls.AltoButton btnDeleteRoom;
     }
 }

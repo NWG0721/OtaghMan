@@ -11,15 +11,15 @@ namespace OtaghMan.Data.Context
     public class StorageUnit : IDisposable
     {
         OtaghMan_DBEntities db = new OtaghMan_DBEntities();
-        private IEquipmentRepository _storageRepository;
+        private IStorageRepository _storageRepository;
 
-        public IEquipmentRepository EquipmentRepository
+        public IStorageRepository StorageRepository
         {
             get
             {
                 if (_storageRepository == null)
                 {
-                    _storageRepository = new EquipmentRepository(db);
+                    _storageRepository = new StorageRepository(db);
                 }
                 return _storageRepository;
             }
@@ -28,6 +28,11 @@ namespace OtaghMan.Data.Context
         public void Dispose()
         {
             db.Dispose();
+        }
+
+        public void SaveChanges()
+        {
+            db.SaveChanges();
         }
     }
 }

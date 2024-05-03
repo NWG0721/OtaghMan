@@ -25,7 +25,14 @@ namespace OtaghMan.Data.Context
                 return _roomRepository;
             }
         }
+        //------------------------------| SAVECHANGES |------------------------------//
 
+       public void SaveChanges()
+        { 
+        db.SaveChanges();
+        }
+
+        //------------------------------| SAVECHANGES |------------------------------//
         public void Dispose()
         {
             db.Dispose();

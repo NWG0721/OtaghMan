@@ -20,6 +20,8 @@ namespace OtaghMan.Data.Repositories
 
         bool AddRoom(Rooms_tbl room);
 
+        List<Rooms_tbl> GetRoomsByFillter(string parameter);
+
         //------------------------------| INSERT |------------------------------//
 
         //------------------------------| UPDATE |------------------------------//
@@ -36,11 +38,7 @@ namespace OtaghMan.Data.Repositories
 
         //------------------------------| DELETE |------------------------------//
 
-        //------------------------------| SAVECHANGES |------------------------------//
 
-        void SaveChanges();
-
-        //------------------------------| SAVECHANGES |------------------------------//
 
     }
 }

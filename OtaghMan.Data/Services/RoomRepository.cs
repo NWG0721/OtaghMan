@@ -62,21 +62,25 @@ namespace OtaghMan.Data.Services
             return db.Rooms_tbl.ToList();
         }
 
+        public List<Rooms_tbl> GetRoomsByFillter(string parameter)
+        {
+            return db.Rooms_tbl.Where(room => room.ROOM_NAME.Contains(parameter)).ToList();
+        }
+
         public Rooms_tbl GetRoomByID(int roomId)
         {
             return db.Rooms_tbl.Find(roomId );
         }
 
-        public void SaveChanges()
-        {
-            db.SaveChanges();
-        }
-
         public bool UpdateRoomInfo(Rooms_tbl room)
-
         {
             try
             {
+                var local = db.Set<Rooms_tbl>().Local.FirstOrDefault(f => f.ROOM_ID == room.ROOM_ID);
+                if (local != null)
+                {
+                    db.Entry(local).State = EntityState.Detached;
+                }
                 db.Entry(room).State = EntityState.Modified;
                 return true;
             }

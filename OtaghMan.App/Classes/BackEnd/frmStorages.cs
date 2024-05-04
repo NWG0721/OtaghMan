@@ -32,7 +32,7 @@ namespace OtaghMan.App.Forms
             panStorage_.Dock = System.Windows.Forms.DockStyle.Top;
             panStorage_.ForeColor = System.Drawing.Color.White;
             panStorage_.Location = new System.Drawing.Point(0, 0);
-            panStorage_.Name = "panStorage"+ countOfRooms;
+            panStorage_.Name = "panStorage_"+ countOfRooms;
             panStorage_.Size = new System.Drawing.Size(268, 121);
             panStorage_.TabIndex = 0;
             panStorage_.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panStorage_MouseClick);
@@ -50,7 +50,7 @@ namespace OtaghMan.App.Forms
             txtStorageName_.Location = new System.Drawing.Point(89, 7);
             txtStorageName_.Margin = new System.Windows.Forms.Padding(4);
             txtStorageName_.Multiline = false;
-            txtStorageName_.Name = "txtStorageName" + countOfRooms;
+            txtStorageName_.Name = "txtStorageName_" + countOfRooms;
             txtStorageName_.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             txtStorageName_.PasswordChar = false;
             txtStorageName_.PlaceholderColor = System.Drawing.Color.DarkGray;
@@ -65,7 +65,7 @@ namespace OtaghMan.App.Forms
             splitBetween_.Dock = System.Windows.Forms.DockStyle.Top;
             splitBetween_.Enabled = false;
             splitBetween_.Location = new System.Drawing.Point(0, 121);
-            splitBetween_.Name = "splitBetween" + countOfRooms;
+            splitBetween_.Name = "splitBetween_" + countOfRooms;
             splitBetween_.Size = new System.Drawing.Size(268, 10);
             splitBetween_.TabIndex = 4;
             splitBetween_.TabStop = false;

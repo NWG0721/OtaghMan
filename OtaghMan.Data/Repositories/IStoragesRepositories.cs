@@ -12,7 +12,7 @@ namespace OtaghMan.Data.Repositories
         //------------------------------| SELECT |------------------------------//
         List<Storages_tbl> GetAllStorages();
         List<Storages_tbl> GetStoragesByFillter(string parameter);
-        List<Storages_tbl> GetStorages(int roomID);
+        List<Storages_tbl> GetStorages(int StorageId);
 
 
 

@@ -30,10 +30,12 @@
         {
             AltoControls.AltoButton btnHeader;
             this.panHead = new System.Windows.Forms.Panel();
+            this.picAppIcon = new WiLBiT.WiLBiTRoundedPictureBox2();
             this.btnMinimize = new AltoControls.AltoButton();
             this.btnExit = new AltoControls.AltoButton();
             this.panStorages = new System.Windows.Forms.Panel();
             this.panContaneStorage = new System.Windows.Forms.Panel();
+            this.splitBetween = new System.Windows.Forms.Splitter();
             this.panStorage = new WiLBiT.WiLBiTPanel();
             this.txtStorageType = new WiLBiT.WiLBiTTextBox();
             this.txtStorageName = new WiLBiT.WiLBiTTextBox();
@@ -45,20 +47,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.altoButton2 = new AltoControls.AltoButton();
             this.altoButton4 = new AltoControls.AltoButton();
-            this.altoSlidingLabel1 = new AltoControls.AltoSlidingLabel();
+            this.lblStorageName = new AltoControls.AltoSlidingLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblRoomName = new AltoControls.AltoSlidingLabel();
             this.layoutPanContaner = new System.Windows.Forms.FlowLayoutPanel();
-            this.splitBetween = new System.Windows.Forms.Splitter();
-            this.picAppIcon = new WiLBiT.WiLBiTRoundedPictureBox2();
             btnHeader = new AltoControls.AltoButton();
             this.panHead.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).BeginInit();
             this.panStorages.SuspendLayout();
             this.panContaneStorage.SuspendLayout();
             this.panStorage.SuspendLayout();
             this.panTop.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHeader
@@ -94,6 +94,22 @@
             this.panHead.Name = "panHead";
             this.panHead.Size = new System.Drawing.Size(947, 37);
             this.panHead.TabIndex = 0;
+            // 
+            // picAppIcon
+            // 
+            this.picAppIcon.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.picAppIcon.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.picAppIcon.BorderColor2 = System.Drawing.Color.HotPink;
+            this.picAppIcon.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.picAppIcon.BorderSize = 2;
+            this.picAppIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picAppIcon.GradientAngle = 50F;
+            this.picAppIcon.Location = new System.Drawing.Point(0, 0);
+            this.picAppIcon.Name = "picAppIcon";
+            this.picAppIcon.Size = new System.Drawing.Size(35, 35);
+            this.picAppIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAppIcon.TabIndex = 5;
+            this.picAppIcon.TabStop = false;
             // 
             // btnMinimize
             // 
@@ -160,6 +176,16 @@
             this.panContaneStorage.Name = "panContaneStorage";
             this.panContaneStorage.Size = new System.Drawing.Size(268, 495);
             this.panContaneStorage.TabIndex = 4;
+            // 
+            // splitBetween
+            // 
+            this.splitBetween.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitBetween.Enabled = false;
+            this.splitBetween.Location = new System.Drawing.Point(0, 121);
+            this.splitBetween.Name = "splitBetween";
+            this.splitBetween.Size = new System.Drawing.Size(268, 10);
+            this.splitBetween.TabIndex = 4;
+            this.splitBetween.TabStop = false;
             // 
             // panStorage
             // 
@@ -303,7 +329,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
             this.panel1.Controls.Add(this.altoButton2);
             this.panel1.Controls.Add(this.altoButton4);
-            this.panel1.Controls.Add(this.altoSlidingLabel1);
+            this.panel1.Controls.Add(this.lblStorageName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblRoomName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -352,16 +378,15 @@
             this.altoButton4.Text = "افزودن جدید";
             this.altoButton4.Transparency = false;
             // 
-            // altoSlidingLabel1
+            // lblStorageName
             // 
-            this.altoSlidingLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altoSlidingLabel1.ForeColor = System.Drawing.Color.Peru;
-            this.altoSlidingLabel1.Location = new System.Drawing.Point(116, 3);
-            this.altoSlidingLabel1.Name = "altoSlidingLabel1";
-            this.altoSlidingLabel1.Size = new System.Drawing.Size(77, 28);
-            this.altoSlidingLabel1.Slide = false;
-            this.altoSlidingLabel1.TabIndex = 1;
-            this.altoSlidingLabel1.Text = "fgh";
+            this.lblStorageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStorageName.ForeColor = System.Drawing.Color.Peru;
+            this.lblStorageName.Location = new System.Drawing.Point(116, 3);
+            this.lblStorageName.Name = "lblStorageName";
+            this.lblStorageName.Size = new System.Drawing.Size(77, 28);
+            this.lblStorageName.Slide = false;
+            this.lblStorageName.TabIndex = 1;
             // 
             // label1
             // 
@@ -384,6 +409,7 @@
             this.lblRoomName.Slide = false;
             this.lblRoomName.TabIndex = 0;
             this.lblRoomName.Text = "fgh";
+            this.lblRoomName.Click += new System.EventHandler(this.lblRoomName_Click);
             // 
             // layoutPanContaner
             // 
@@ -392,32 +418,6 @@
             this.layoutPanContaner.Name = "layoutPanContaner";
             this.layoutPanContaner.Size = new System.Drawing.Size(679, 567);
             this.layoutPanContaner.TabIndex = 4;
-            // 
-            // splitBetween
-            // 
-            this.splitBetween.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitBetween.Enabled = false;
-            this.splitBetween.Location = new System.Drawing.Point(0, 121);
-            this.splitBetween.Name = "splitBetween";
-            this.splitBetween.Size = new System.Drawing.Size(268, 10);
-            this.splitBetween.TabIndex = 4;
-            this.splitBetween.TabStop = false;
-            // 
-            // picAppIcon
-            // 
-            this.picAppIcon.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.picAppIcon.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.picAppIcon.BorderColor2 = System.Drawing.Color.HotPink;
-            this.picAppIcon.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.picAppIcon.BorderSize = 2;
-            this.picAppIcon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picAppIcon.GradientAngle = 50F;
-            this.picAppIcon.Location = new System.Drawing.Point(0, 0);
-            this.picAppIcon.Name = "picAppIcon";
-            this.picAppIcon.Size = new System.Drawing.Size(35, 35);
-            this.picAppIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAppIcon.TabIndex = 5;
-            this.picAppIcon.TabStop = false;
             // 
             // frmStorages
             // 
@@ -436,13 +436,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmStorages_Load);
             this.panHead.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).EndInit();
             this.panStorages.ResumeLayout(false);
             this.panContaneStorage.ResumeLayout(false);
             this.panStorage.ResumeLayout(false);
             this.panTop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -461,7 +461,7 @@
         private System.Windows.Forms.FlowLayoutPanel layoutPanContaner;
         private WiLBiT.WiLBiTPanel panStorage;
         private WiLBiT.WiLBiTTextBox txtStorageName;
-        private AltoControls.AltoSlidingLabel altoSlidingLabel1;
+        private AltoControls.AltoSlidingLabel lblStorageName;
         private System.Windows.Forms.Label label1;
         private AltoControls.AltoSlidingLabel lblRoomName;
         private WiLBiT.WiLBiTTextBox txtStorageType;

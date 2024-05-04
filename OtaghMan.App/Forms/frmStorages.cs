@@ -57,7 +57,7 @@ namespace OtaghMan.App.Forms
         string roomName;
         int roomID;
 
-        StorageUnit db ;
+        StorageUnit db;
 
 
         public frmStorages(Rooms_tbl rooms)
@@ -70,10 +70,9 @@ namespace OtaghMan.App.Forms
 
 
         private int GetIndexFromPanelName(string name)
-
         {
 
-            string prefix = "panPerson";
+            string prefix = "panStorage_";
 
             if (name.StartsWith(prefix))
 
@@ -110,13 +109,17 @@ namespace OtaghMan.App.Forms
             }
             if (e.Button == MouseButtons.Left)
             {
-             
+                db = new StorageUnit();
+                var storageName = db.StorageRepository.GetStorageByID(index);
+                Storages_tbl stb = db.StorageRepository.GetStorageByID(index);
+                lblStorageName.Text = storageName.STORAGE_NAME;
             }
         }
 
         private void frmStorages_Load(object sender, EventArgs e)
         {
             lblRoomName.Text = roomName;
+            CartCaller();
         }
 
         private void btnAddStorage_Click(object sender, EventArgs e)
@@ -132,6 +135,13 @@ namespace OtaghMan.App.Forms
         private void altoButton3_Click(object sender, EventArgs e)
         {
             CartCaller();
+        }
+
+        private void lblRoomName_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmMain main = new frmMain();
+            main.Show();
         }
     }
 }

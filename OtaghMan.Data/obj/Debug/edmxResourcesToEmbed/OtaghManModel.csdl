@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OtaghMan_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Equipment_tbl">
+    <Key>
+      <PropertyRef Name="EQUIPMENT_ID" />
+    </Key>
+    <Property Name="EQUIPMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EQUIPMENT_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EQUIPMENT_PIC" Type="String" MaxLength="257" FixedLength="true" Unicode="true" />
+    <Property Name="EQUIPMENT_STORAGE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Storages_tbl" Relationship="Self.Equipment_To_Storages" FromRole="Equipment_tbl" ToRole="Storages_tbl" />
+    <Property Name="EQUIPMENT_OWNER" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users_tbl" Relationship="OtaghMan_DBModel.Equipment_To_Users" FromRole="Equipment_tbl" ToRole="Users_tbl" />
+  </EntityType>
+  <EntityType Name="Rooms_tbl">
+    <Key>
+      <PropertyRef Name="ROOM_ID" />
+    </Key>
+    <Property Name="ROOM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROOM_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Storages_tbl" Relationship="Self.Storages_To_Rooms" FromRole="Rooms_tbl" ToRole="Storages_tbl" />
+    <Property Name="ROOM_PIC" Type="String" MaxLength="260" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Storages_tbl">
+    <Key>
+      <PropertyRef Name="STORAGE_ID" />
+    </Key>
+    <Property Name="STORAGE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STORAGE_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ROOM_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Equipment_tbl" Relationship="Self.Equipment_To_Storages" FromRole="Storages_tbl" ToRole="Equipment_tbl" />
+    <NavigationProperty Name="Rooms_tbl" Relationship="Self.Storages_To_Rooms" FromRole="Storages_tbl" ToRole="Rooms_tbl" />
+  </EntityType>
+  <Association Name="Equipment_To_Storages">
+    <End Role="Storages_tbl" Type="Self.Storages_tbl" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Equipment_tbl" Type="Self.Equipment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Storages_tbl">
+        <PropertyRef Name="STORAGE_ID" />
+      </Principal>
+      <Dependent Role="Equipment_tbl">
+        <PropertyRef Name="EQUIPMENT_STORAGE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Storages_To_Rooms">
+    <End Role="Rooms_tbl" Type="Self.Rooms_tbl" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Storages_tbl" Type="Self.Storages_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms_tbl">
+        <PropertyRef Name="ROOM_ID" />
+      </Principal>
+      <Dependent Role="Storages_tbl">
+        <PropertyRef Name="ROOM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OtaghMan_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Equipment_tbl" EntityType="Self.Equipment_tbl" />
+    <EntitySet Name="Rooms_tbl" EntityType="Self.Rooms_tbl" />
+    <EntitySet Name="Storages_tbl" EntityType="Self.Storages_tbl" />
+    <AssociationSet Name="Equipment_To_Storages" Association="Self.Equipment_To_Storages">
+      <End Role="Storages_tbl" EntitySet="Storages_tbl" />
+      <End Role="Equipment_tbl" EntitySet="Equipment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="Storages_To_Rooms" Association="Self.Storages_To_Rooms">
+      <End Role="Rooms_tbl" EntitySet="Rooms_tbl" />
+      <End Role="Storages_tbl" EntitySet="Storages_tbl" />
+    </AssociationSet>
+    <EntitySet Name="Users_tbl" EntityType="OtaghMan_DBModel.Users_tbl" />
+    <AssociationSet Name="Equipment_To_Users" Association="OtaghMan_DBModel.Equipment_To_Users">
+      <End Role="Users_tbl" EntitySet="Users_tbl" />
+      <End Role="Equipment_tbl" EntitySet="Equipment_tbl" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="OtaghMan_DBModel.sysdiagrams" />
+  </EntityContainer>
+  <EntityType Name="Users_tbl">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_USERNAME" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="USER_PASSWORD" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Equipment_tbl" Relationship="OtaghMan_DBModel.Equipment_To_Users" FromRole="Users_tbl" ToRole="Equipment_tbl" />
+  </EntityType>
+  <Association Name="Equipment_To_Users">
+    <End Type="OtaghMan_DBModel.Users_tbl" Role="Users_tbl" Multiplicity="1" />
+    <End Type="OtaghMan_DBModel.Equipment_tbl" Role="Equipment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_tbl">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="Equipment_tbl">
+        <PropertyRef Name="EQUIPMENT_OWNER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OtaghMan_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Equipment_tbl">
+    <Key>
+      <PropertyRef Name="EQUIPMENT_ID" />
+    </Key>
+    <Property Name="EQUIPMENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EQUIPMENT_NAME" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="EQUIPMENT_PIC" Type="nchar" MaxLength="257" />
+    <Property Name="EQUIPMENT_STORAGE" Type="int" Nullable="false" />
+    <Property Name="EQUIPMENT_OWNER" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rooms_tbl">
+    <Key>
+      <PropertyRef Name="ROOM_ID" />
+    </Key>
+    <Property Name="ROOM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ROOM_NAME" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ROOM_PIC" Type="nchar" MaxLength="260" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Storages_tbl">
+    <Key>
+      <PropertyRef Name="STORAGE_ID" />
+    </Key>
+    <Property Name="STORAGE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STORAGE_NAME" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ROOM_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users_tbl">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_USERNAME" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="USER_PASSWORD" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <Association Name="Equipment_To_Storages">
+    <End Role="Storages_tbl" Type="Self.Storages_tbl" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Equipment_tbl" Type="Self.Equipment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Storages_tbl">
+        <PropertyRef Name="STORAGE_ID" />
+      </Principal>
+      <Dependent Role="Equipment_tbl">
+        <PropertyRef Name="EQUIPMENT_STORAGE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Equipment_To_Users">
+    <End Role="Users_tbl" Type="Self.Users_tbl" Multiplicity="1" />
+    <End Role="Equipment_tbl" Type="Self.Equipment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_tbl">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="Equipment_tbl">
+        <PropertyRef Name="EQUIPMENT_OWNER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Storages_To_Rooms">
+    <End Role="Rooms_tbl" Type="Self.Rooms_tbl" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Storages_tbl" Type="Self.Storages_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms_tbl">
+        <PropertyRef Name="ROOM_ID" />
+      </Principal>
+      <Dependent Role="Storages_tbl">
+        <PropertyRef Name="ROOM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OtaghMan_DBModelStoreContainer">
+    <EntitySet Name="Equipment_tbl" EntityType="Self.Equipment_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rooms_tbl" EntityType="Self.Rooms_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Storages_tbl" EntityType="Self.Storages_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users_tbl" EntityType="Self.Users_tbl" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="Equipment_To_Storages" Association="Self.Equipment_To_Storages">
+      <End Role="Storages_tbl" EntitySet="Storages_tbl" />
+      <End Role="Equipment_tbl" EntitySet="Equipment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="Equipment_To_Users" Association="Self.Equipment_To_Users">
+      <End Role="Users_tbl" EntitySet="Users_tbl" />
+      <End Role="Equipment_tbl" EntitySet="Equipment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="Storages_To_Rooms" Association="Self.Storages_To_Rooms">
+      <End Role="Rooms_tbl" EntitySet="Rooms_tbl" />
+      <End Role="Storages_tbl" EntitySet="Storages_tbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

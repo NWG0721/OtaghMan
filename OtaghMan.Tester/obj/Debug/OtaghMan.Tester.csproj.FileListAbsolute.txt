@@ -1,0 +1,13 @@
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\bin\Debug\OtaghMan.Tester.exe.config
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\bin\Debug\OtaghMan.Tester.exe
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\bin\Debug\OtaghMan.Tester.pdb
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\bin\Debug\OtaghMan.Data.dll
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\bin\Debug\EntityFramework.dll
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\bin\Debug\OtaghMan.Data.pdb
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\bin\Debug\OtaghMan.Data.dll.config
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\bin\Debug\EntityFramework.xml
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\obj\Debug\OtaghMan.Tester.csproj.AssemblyReference.cache
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\obj\Debug\OtaghMan.Tester.csproj.CoreCompileInputs.cache
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\obj\Debug\OtaghMan.96455530.Up2Date
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\obj\Debug\OtaghMan.Tester.exe
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Tester\obj\Debug\OtaghMan.Tester.pdb

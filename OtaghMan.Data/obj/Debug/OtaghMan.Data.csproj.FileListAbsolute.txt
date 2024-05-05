@@ -1,0 +1,12 @@
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\bin\Debug\OtaghMan.Data.dll.config
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\bin\Debug\OtaghMan.Data.dll
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\bin\Debug\OtaghMan.Data.pdb
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\bin\Debug\EntityFramework.dll
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\bin\Debug\EntityFramework.SqlServer.dll
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\bin\Debug\EntityFramework.xml
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\bin\Debug\EntityFramework.SqlServer.xml
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\obj\Debug\OtaghMan.Data.csproj.AssemblyReference.cache
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\obj\Debug\OtaghMan.Data.csproj.CoreCompileInputs.cache
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\obj\Debug\OtaghMan.0329BC7A.Up2Date
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\obj\Debug\OtaghMan.Data.dll
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.Data\obj\Debug\OtaghMan.Data.pdb

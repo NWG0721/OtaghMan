@@ -45,12 +45,18 @@
             this.altoButton3 = new AltoControls.AltoButton();
             this.btnAddStorage = new AltoControls.AltoButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAddNewEquip = new AltoControls.AltoButton();
             this.altoButton2 = new AltoControls.AltoButton();
-            this.altoButton4 = new AltoControls.AltoButton();
             this.lblStorageName = new AltoControls.AltoSlidingLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblRoomName = new AltoControls.AltoSlidingLabel();
-            this.layoutPanContaner = new System.Windows.Forms.FlowLayoutPanel();
+            this.lpcEquipments = new System.Windows.Forms.FlowLayoutPanel();
+            this.equipPan = new WiLBiT.WiLBiTPanel();
+            this.picEquip = new System.Windows.Forms.PictureBox();
+            this.btnDeleteEquip = new AltoControls.AltoButton();
+            this.btnEquipEdit = new AltoControls.AltoButton();
+            this.txtEquipOwner = new WiLBiT.WiLBiTTextBox();
+            this.txtEquipName = new WiLBiT.WiLBiTTextBox();
             btnHeader = new AltoControls.AltoButton();
             this.panHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAppIcon)).BeginInit();
@@ -59,6 +65,9 @@
             this.panStorage.SuspendLayout();
             this.panTop.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.lpcEquipments.SuspendLayout();
+            this.equipPan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEquip)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHeader
@@ -75,7 +84,7 @@
             btnHeader.Location = new System.Drawing.Point(35, 0);
             btnHeader.Name = "btnHeader";
             btnHeader.Radius = 10;
-            btnHeader.Size = new System.Drawing.Size(842, 37);
+            btnHeader.Size = new System.Drawing.Size(1095, 37);
             btnHeader.Stroke = false;
             btnHeader.StrokeColor = System.Drawing.Color.Gray;
             btnHeader.TabIndex = 8;
@@ -92,7 +101,7 @@
             this.panHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.panHead.Location = new System.Drawing.Point(0, 0);
             this.panHead.Name = "panHead";
-            this.panHead.Size = new System.Drawing.Size(947, 37);
+            this.panHead.Size = new System.Drawing.Size(1200, 37);
             this.panHead.TabIndex = 0;
             // 
             // picAppIcon
@@ -122,7 +131,7 @@
             this.btnMinimize.ForeColor = System.Drawing.Color.Black;
             this.btnMinimize.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnMinimize.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnMinimize.Location = new System.Drawing.Point(877, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1130, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Radius = 10;
             this.btnMinimize.Size = new System.Drawing.Size(35, 37);
@@ -144,7 +153,7 @@
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Inactive1 = System.Drawing.Color.Red;
             this.btnExit.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnExit.Location = new System.Drawing.Point(912, 0);
+            this.btnExit.Location = new System.Drawing.Point(1165, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Radius = 10;
             this.btnExit.Size = new System.Drawing.Size(35, 37);
@@ -327,16 +336,39 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.panel1.Controls.Add(this.btnAddNewEquip);
             this.panel1.Controls.Add(this.altoButton2);
-            this.panel1.Controls.Add(this.altoButton4);
             this.panel1.Controls.Add(this.lblStorageName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblRoomName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(268, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(679, 67);
+            this.panel1.Size = new System.Drawing.Size(932, 67);
             this.panel1.TabIndex = 3;
+            // 
+            // btnAddNewEquip
+            // 
+            this.btnAddNewEquip.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnAddNewEquip.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.btnAddNewEquip.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddNewEquip.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAddNewEquip.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAddNewEquip.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewEquip.ForeColor = System.Drawing.Color.Peru;
+            this.btnAddNewEquip.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnAddNewEquip.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnAddNewEquip.Location = new System.Drawing.Point(678, 0);
+            this.btnAddNewEquip.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
+            this.btnAddNewEquip.Name = "btnAddNewEquip";
+            this.btnAddNewEquip.Radius = 10;
+            this.btnAddNewEquip.Size = new System.Drawing.Size(127, 67);
+            this.btnAddNewEquip.Stroke = true;
+            this.btnAddNewEquip.StrokeColor = System.Drawing.Color.Peru;
+            this.btnAddNewEquip.TabIndex = 17;
+            this.btnAddNewEquip.Text = "افزودن جدید";
+            this.btnAddNewEquip.Transparency = false;
+            this.btnAddNewEquip.Click += new System.EventHandler(this.btnAddNewEquip_Click);
             // 
             // altoButton2
             // 
@@ -344,39 +376,21 @@
             this.altoButton2.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
             this.altoButton2.BackColor = System.Drawing.Color.Transparent;
             this.altoButton2.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.altoButton2.Dock = System.Windows.Forms.DockStyle.Right;
             this.altoButton2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altoButton2.ForeColor = System.Drawing.Color.Peru;
             this.altoButton2.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
             this.altoButton2.Inactive2 = System.Drawing.Color.Transparent;
-            this.altoButton2.Location = new System.Drawing.Point(546, 4);
+            this.altoButton2.Location = new System.Drawing.Point(805, 0);
             this.altoButton2.Name = "altoButton2";
             this.altoButton2.Radius = 10;
-            this.altoButton2.Size = new System.Drawing.Size(127, 60);
+            this.altoButton2.Size = new System.Drawing.Size(127, 67);
             this.altoButton2.Stroke = true;
             this.altoButton2.StrokeColor = System.Drawing.Color.Peru;
             this.altoButton2.TabIndex = 18;
             this.altoButton2.Text = "تازه سازی";
             this.altoButton2.Transparency = false;
-            // 
-            // altoButton4
-            // 
-            this.altoButton4.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
-            this.altoButton4.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
-            this.altoButton4.BackColor = System.Drawing.Color.Transparent;
-            this.altoButton4.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.altoButton4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altoButton4.ForeColor = System.Drawing.Color.Peru;
-            this.altoButton4.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
-            this.altoButton4.Inactive2 = System.Drawing.Color.Transparent;
-            this.altoButton4.Location = new System.Drawing.Point(416, 4);
-            this.altoButton4.Name = "altoButton4";
-            this.altoButton4.Radius = 10;
-            this.altoButton4.Size = new System.Drawing.Size(127, 60);
-            this.altoButton4.Stroke = true;
-            this.altoButton4.StrokeColor = System.Drawing.Color.Peru;
-            this.altoButton4.TabIndex = 17;
-            this.altoButton4.Text = "افزودن جدید";
-            this.altoButton4.Transparency = false;
+            this.altoButton2.Click += new System.EventHandler(this.altoButton2_Click);
             // 
             // lblStorageName
             // 
@@ -411,21 +425,142 @@
             this.lblRoomName.Text = "fgh";
             this.lblRoomName.Click += new System.EventHandler(this.lblRoomName_Click);
             // 
-            // layoutPanContaner
+            // lpcEquipments
             // 
-            this.layoutPanContaner.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutPanContaner.Location = new System.Drawing.Point(268, 104);
-            this.layoutPanContaner.Name = "layoutPanContaner";
-            this.layoutPanContaner.Size = new System.Drawing.Size(679, 567);
-            this.layoutPanContaner.TabIndex = 4;
+            this.lpcEquipments.AutoScroll = true;
+            this.lpcEquipments.Controls.Add(this.equipPan);
+            this.lpcEquipments.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lpcEquipments.Location = new System.Drawing.Point(268, 104);
+            this.lpcEquipments.Name = "lpcEquipments";
+            this.lpcEquipments.Size = new System.Drawing.Size(932, 567);
+            this.lpcEquipments.TabIndex = 4;
+            // 
+            // equipPan
+            // 
+            this.equipPan.BackColor = System.Drawing.Color.Bisque;
+            this.equipPan.BorderColor = System.Drawing.Color.Peru;
+            this.equipPan.BorderRadius = 25;
+            this.equipPan.BorderSize = 3;
+            this.equipPan.Controls.Add(this.picEquip);
+            this.equipPan.Controls.Add(this.btnDeleteEquip);
+            this.equipPan.Controls.Add(this.btnEquipEdit);
+            this.equipPan.Controls.Add(this.txtEquipOwner);
+            this.equipPan.Controls.Add(this.txtEquipName);
+            this.equipPan.ForeColor = System.Drawing.Color.White;
+            this.equipPan.Location = new System.Drawing.Point(35, 24);
+            this.equipPan.Margin = new System.Windows.Forms.Padding(24);
+            this.equipPan.Name = "equipPan";
+            this.equipPan.Size = new System.Drawing.Size(873, 178);
+            this.equipPan.TabIndex = 6;
+            // 
+            // picEquip
+            // 
+            this.picEquip.BackColor = System.Drawing.Color.Transparent;
+            this.picEquip.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picEquip.Location = new System.Drawing.Point(634, 0);
+            this.picEquip.Name = "picEquip";
+            this.picEquip.Size = new System.Drawing.Size(239, 178);
+            this.picEquip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEquip.TabIndex = 0;
+            this.picEquip.TabStop = false;
+            // 
+            // btnDeleteEquip
+            // 
+            this.btnDeleteEquip.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnDeleteEquip.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.btnDeleteEquip.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteEquip.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnDeleteEquip.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteEquip.ForeColor = System.Drawing.Color.Peru;
+            this.btnDeleteEquip.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnDeleteEquip.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnDeleteEquip.Location = new System.Drawing.Point(31, 102);
+            this.btnDeleteEquip.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
+            this.btnDeleteEquip.Name = "btnDeleteEquip";
+            this.btnDeleteEquip.Radius = 10;
+            this.btnDeleteEquip.Size = new System.Drawing.Size(168, 67);
+            this.btnDeleteEquip.Stroke = true;
+            this.btnDeleteEquip.StrokeColor = System.Drawing.Color.Peru;
+            this.btnDeleteEquip.TabIndex = 21;
+            this.btnDeleteEquip.Text = "پاکیدن";
+            this.btnDeleteEquip.Transparency = false;
+            this.btnDeleteEquip.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDeleteEquip_MouseClick);
+            // 
+            // btnEquipEdit
+            // 
+            this.btnEquipEdit.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnEquipEdit.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(171)))), ((int)(((byte)(120)))));
+            this.btnEquipEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEquipEdit.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnEquipEdit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEquipEdit.ForeColor = System.Drawing.Color.Peru;
+            this.btnEquipEdit.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(169)))));
+            this.btnEquipEdit.Inactive2 = System.Drawing.Color.Transparent;
+            this.btnEquipEdit.Location = new System.Drawing.Point(31, 10);
+            this.btnEquipEdit.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
+            this.btnEquipEdit.Name = "btnEquipEdit";
+            this.btnEquipEdit.Radius = 10;
+            this.btnEquipEdit.Size = new System.Drawing.Size(168, 67);
+            this.btnEquipEdit.Stroke = true;
+            this.btnEquipEdit.StrokeColor = System.Drawing.Color.Peru;
+            this.btnEquipEdit.TabIndex = 20;
+            this.btnEquipEdit.Text = "تصحیح";
+            this.btnEquipEdit.Transparency = false;
+            this.btnEquipEdit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnEquipEdit_MouseClick);
+            // 
+            // txtEquipOwner
+            // 
+            this.txtEquipOwner.BackColor = System.Drawing.Color.Bisque;
+            this.txtEquipOwner.BorderColor = System.Drawing.Color.Empty;
+            this.txtEquipOwner.BorderFocusColor = System.Drawing.Color.Empty;
+            this.txtEquipOwner.BorderRadius = 4;
+            this.txtEquipOwner.BorderSize = 2;
+            this.txtEquipOwner.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtEquipOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.txtEquipOwner.ForeColor = System.Drawing.Color.Peru;
+            this.txtEquipOwner.Location = new System.Drawing.Point(432, 101);
+            this.txtEquipOwner.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEquipOwner.Multiline = false;
+            this.txtEquipOwner.Name = "txtEquipOwner";
+            this.txtEquipOwner.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtEquipOwner.PasswordChar = false;
+            this.txtEquipOwner.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtEquipOwner.PlaceholderText = "";
+            this.txtEquipOwner.Size = new System.Drawing.Size(195, 38);
+            this.txtEquipOwner.TabIndex = 2;
+            this.txtEquipOwner.Texts = "fgh";
+            this.txtEquipOwner.UnderlinedStyle = false;
+            // 
+            // txtEquipName
+            // 
+            this.txtEquipName.BackColor = System.Drawing.Color.Bisque;
+            this.txtEquipName.BorderColor = System.Drawing.Color.Empty;
+            this.txtEquipName.BorderFocusColor = System.Drawing.Color.Empty;
+            this.txtEquipName.BorderRadius = 4;
+            this.txtEquipName.BorderSize = 2;
+            this.txtEquipName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtEquipName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.txtEquipName.ForeColor = System.Drawing.Color.Peru;
+            this.txtEquipName.Location = new System.Drawing.Point(432, 10);
+            this.txtEquipName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEquipName.Multiline = false;
+            this.txtEquipName.Name = "txtEquipName";
+            this.txtEquipName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtEquipName.PasswordChar = false;
+            this.txtEquipName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtEquipName.PlaceholderText = "";
+            this.txtEquipName.Size = new System.Drawing.Size(195, 38);
+            this.txtEquipName.TabIndex = 2;
+            this.txtEquipName.Texts = "fgh";
+            this.txtEquipName.UnderlinedStyle = false;
             // 
             // frmStorages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(243)))), ((int)(((byte)(214)))));
-            this.ClientSize = new System.Drawing.Size(947, 671);
-            this.Controls.Add(this.layoutPanContaner);
+            this.ClientSize = new System.Drawing.Size(1200, 671);
+            this.Controls.Add(this.lpcEquipments);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panStorages);
             this.Controls.Add(this.panHead);
@@ -443,6 +578,9 @@
             this.panTop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.lpcEquipments.ResumeLayout(false);
+            this.equipPan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picEquip)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -458,7 +596,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Splitter TopSplit;
         private System.Windows.Forms.Panel panContaneStorage;
-        private System.Windows.Forms.FlowLayoutPanel layoutPanContaner;
         private WiLBiT.WiLBiTPanel panStorage;
         private WiLBiT.WiLBiTTextBox txtStorageName;
         private AltoControls.AltoSlidingLabel lblStorageName;
@@ -469,7 +606,14 @@
         private AltoControls.AltoTextBox txtSearch;
         private AltoControls.AltoButton altoButton3;
         private AltoControls.AltoButton altoButton2;
-        private AltoControls.AltoButton altoButton4;
+        private AltoControls.AltoButton btnAddNewEquip;
         private System.Windows.Forms.Splitter splitBetween;
+        private System.Windows.Forms.FlowLayoutPanel lpcEquipments;
+        private WiLBiT.WiLBiTPanel equipPan;
+        private System.Windows.Forms.PictureBox picEquip;
+        private WiLBiT.WiLBiTTextBox txtEquipName;
+        private AltoControls.AltoButton btnDeleteEquip;
+        private AltoControls.AltoButton btnEquipEdit;
+        private WiLBiT.WiLBiTTextBox txtEquipOwner;
     }
 }

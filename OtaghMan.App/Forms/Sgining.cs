@@ -42,7 +42,6 @@ namespace OtaghMan.App
         //For moving form
         //
 
-
         public Sgining()
         {
             InitializeComponent();
@@ -88,6 +87,7 @@ namespace OtaghMan.App
         }
 
         bool signIned = true;
+
         private void btnSignInOrSignUp_Click(object sender, EventArgs e)
         {
             txtRePass.Visible = !txtRePass.Visible;
@@ -107,9 +107,9 @@ namespace OtaghMan.App
         }
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            frmMain main = new frmMain();
             Users_tbl user = new Users_tbl();
-            
+            frmMain main;
+
             using (UsersUnit db = new UsersUnit())
             {
                 if (signIned)
@@ -122,6 +122,7 @@ namespace OtaghMan.App
                     }
                     else
                     {
+                        main = new frmMain(user.USER_ID);
                         lblBadUserPass.Visible = false;
                         Thread.Sleep(500);
                         this.Hide();
@@ -134,15 +135,16 @@ namespace OtaghMan.App
                     if (user != null)
                     {
                         lblBadUserPass.Visible = true;
-                       lblBadUserPass.Text = "یکی قبلا از یوزرت اسکی رفته مشتی";
+                        lblBadUserPass.Text = "یکی قبلا از یوزرت اسکی رفته مشتی";
                     }
                     else
                     {
                         if (txtRePass.Texts == txtPassWord.Texts)
                         {
-                            Users_tbl adduser = new Users_tbl() { 
-                            USER_USERNAME = txtUserName.Texts,
-                            USER_PASSWORD = txtPassWord.Texts
+                            Users_tbl adduser = new Users_tbl()
+                            {
+                                USER_USERNAME = txtUserName.Texts,
+                                USER_PASSWORD = txtPassWord.Texts
                             };
 
                             lblBadUserPass.Visible = false;
@@ -152,12 +154,13 @@ namespace OtaghMan.App
                             }
                             else
                             {
-
                                 db.UsersRopository.SaveChanges();
+                                main = new frmMain(user.USER_ID);
                                 MessageBox.Show("اضافه شدی جون دل", "کار دراومد کیومرث", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                 Thread.Sleep(2000);
                                 this.Hide();
                                 main.Show();
+
                             }
 
 

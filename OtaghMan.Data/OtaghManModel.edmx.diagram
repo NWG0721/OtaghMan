@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8f732bbbbb2c44cead12a602c6854a4f" Name="Diagram1">
-        <EntityTypeShape EntityType="OtaghMan_DBModel.Equipment_tbl" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OtaghMan_DBModel.Equipment_tbl" Width="1.5" PointX="5.625" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="OtaghMan_DBModel.Rooms_tbl" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="OtaghMan_DBModel.Storages_tbl" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="OtaghMan_DBModel.Equipment_To_Storages" ManuallyRouted="false" />

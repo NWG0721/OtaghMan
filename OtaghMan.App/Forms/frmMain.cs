@@ -50,11 +50,12 @@ namespace OtaghMan.App
         Rooms_tbl rooms;
         RoomsUnit db;
         public int index = 0;
+        int userID;
 
 
-
-        public frmMain()
+        public frmMain(int userID)
         {
+            this.userID = userID;
             InitializeComponent();
         }
 
@@ -161,7 +162,7 @@ namespace OtaghMan.App
             room = db.RoomsRepository.GetRoomByID(index);
             if (e.Button == MouseButtons.Left)
             {
-                frmStorages storages = new frmStorages(room);
+                frmStorages storages = new frmStorages(room , userID);
                 this.Hide();
                 storages.ShowDialog();
             }

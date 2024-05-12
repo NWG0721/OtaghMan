@@ -30,5 +30,10 @@ namespace OtaghMan.Data.Context
         {
             db.Dispose();
         }
+
+        public void SaveChanges()
+        {
+            db.SaveChanges();
+        }
     }
 }

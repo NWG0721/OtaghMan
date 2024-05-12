@@ -14,6 +14,10 @@ namespace OtaghMan.Data.Repositories
 
         Equipment_tbl GetEquipmentByID(int equipmentId);
 
+        List<Equipment_tbl> FindEquipmentByStorageID(int storageId);
+
+        List<Equipment_tbl> GetTheActualEquipments(int storageId,int userID);
+
         //------------------------------| SELECT |------------------------------//
 
         //------------------------------| INSERT |------------------------------//
@@ -37,8 +41,6 @@ namespace OtaghMan.Data.Repositories
         //------------------------------| DELETE |------------------------------//
 
         //------------------------------| SAVECHANGES |------------------------------//
-
-        void SaveChanges();
 
         //------------------------------| SAVECHANGES |------------------------------//
 

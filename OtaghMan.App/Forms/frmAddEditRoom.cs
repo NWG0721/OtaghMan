@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using OtaghMan.Data.Context;
 using OtaghMan.Data;
+using OtaghMan.App.Classes.BackEnd;
 
 namespace OtaghMan.App
 {
@@ -19,29 +20,17 @@ namespace OtaghMan.App
         {
             InitializeComponent();
         }
-        string uniqueFileName;
         RoomsUnit db = new RoomsUnit();
-
-        string imagePath = "";
-        string dirPath = Application.StartupPath + "/Images/Rooms";
-        string finalPath ;
+        string finalPath;
         private void btnAddPicture_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Image Files |*.png;*.jpg;*.jpeg;*.bmp;*.heic;*.gif";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                imagePath = ofd.FileName;
-                if (!Directory.Exists(dirPath))
-                {
-                    Directory.CreateDirectory(dirPath);
-
-                }
-                uniqueFileName = Guid.NewGuid()+Path.GetExtension(imagePath);
-                finalPath = dirPath + '/' + uniqueFileName;
-                File.Copy(imagePath, finalPath);
-                picRoomPicture.ImageLocation = finalPath;
+                finalPath = FileWorker.PicAddressGenerator(ofd.FileName);
             }
+            picRoomPicture.ImageLocation = finalPath;
         }
 
         private void altoButton1_Click(object sender, EventArgs e)

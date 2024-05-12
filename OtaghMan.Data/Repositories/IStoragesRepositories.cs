@@ -15,6 +15,9 @@ namespace OtaghMan.Data.Repositories
         List<Storages_tbl> GetStorages(int StorageId);
 
 
+        Storages_tbl GetStorageByName(string storageName,int roomID);
+
+        List<Storages_tbl> GetStorageByRoom(int roomID);
 
         Storages_tbl GetStorageByID(int StorageId);
 

@@ -56,23 +56,28 @@ namespace OtaghMan.App.Forms
         public int index = 0;
         string roomName;
         int roomID;
-
+        int userID;
+        frmAddEquip addEquip;
         StorageUnit db;
+        EquipmentUnit equipmentUnit;
+        UsersUnit usersUnit;
+        public List<Storages_tbl> listOfStorages = new List<Storages_tbl>();
+        public List<Equipment_tbl> listOfEquipment = new List<Equipment_tbl>();
 
 
-        public frmStorages(Rooms_tbl rooms)
+
+
+        public frmStorages(Rooms_tbl rooms, int userID)
         {
-
+            this.userID = userID;
             InitializeComponent();
             roomName = rooms.ROOM_NAME.ToString();
             roomID = rooms.ROOM_ID;
         }
 
 
-        private int GetIndexFromPanelName(string name)
+        private int GetIndexFromPanelName(string name, string prefix)
         {
-
-            string prefix = "panStorage_";
 
             if (name.StartsWith(prefix))
 
@@ -95,8 +100,9 @@ namespace OtaghMan.App.Forms
         }
         private void panStorage_MouseClick(object sender, MouseEventArgs e)
         {
+            db = new StorageUnit();
             WiLBiTPanel panel = sender as WiLBiTPanel;
-            index = GetIndexFromPanelName(panel.Name);
+            index = GetIndexFromPanelName(panel.Name, "panStorage_");
             if (e.Button == MouseButtons.Right)
             {
                 frmClickRightForStorageAndEquip fCRFSAE = new frmClickRightForStorageAndEquip(index);
@@ -109,10 +115,10 @@ namespace OtaghMan.App.Forms
             }
             if (e.Button == MouseButtons.Left)
             {
-                db = new StorageUnit();
-                var storageName = db.StorageRepository.GetStorageByID(index);
-                Storages_tbl stb = db.StorageRepository.GetStorageByID(index);
-                lblStorageName.Text = storageName.STORAGE_NAME;
+                equipmentUnit = new EquipmentUnit();
+                lblStorageName.Text = db.StorageRepository.GetStorageByID(index).STORAGE_NAME;
+                equipmentUnit.EquipmentRepository.GetTheActualEquipments(index, userID);
+                equipmentUnit.Dispose();
             }
         }
 
@@ -140,8 +146,38 @@ namespace OtaghMan.App.Forms
         private void lblRoomName_Click(object sender, EventArgs e)
         {
             this.Close();
-            frmMain main = new frmMain();
+            frmMain main = new frmMain(userID);
             main.Show();
+        }
+
+        private void btnAddNewEquip_Click(object sender, EventArgs e)
+        {
+            addEquip = new frmAddEquip(roomID,0);
+            addEquip.ShowDialog();
+        }
+
+        private void altoButton2_Click(object sender, EventArgs e)
+        {
+            SlideCaller(index);
+        }
+
+        private void btnDeleteEquip_MouseClick(object sender, MouseEventArgs e)
+        {
+            Button button = sender as Button;
+            equipmentUnit = new EquipmentUnit();
+            GetIndexFromPanelName(button.Name, "btnDeleteEquip");
+            index = 0;
+
+        }
+
+        private void btnEquipEdit_MouseClick(object sender, MouseEventArgs e)
+        {
+            Button button = sender as Button;
+            equipmentUnit = new EquipmentUnit();
+            addEquip = new frmAddEquip(roomID, GetIndexFromPanelName(button.Name, "btnEquipEdit"));
+            index = 0;
+            addEquip.ShowDialog();
+
         }
     }
 }

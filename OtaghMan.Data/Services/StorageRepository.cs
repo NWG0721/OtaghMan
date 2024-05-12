@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Security.Cryptography.X509Certificates;
 
 namespace OtaghMan.Data.Services
 {
@@ -66,9 +67,19 @@ namespace OtaghMan.Data.Services
             return db.Storages_tbl.Find(storageId);
         }
 
-        public List<Storages_tbl> GetStorages(int roomID)
+        public Storages_tbl GetStorageByName(string storageName, int roomID)
         {
-            return db.Storages_tbl.Where(storage => storage.ROOM_ID == roomID).ToList();
+            return db.Storages_tbl.Where(store => store.STORAGE_NAME == storageName && store.ROOM_ID == roomID).SingleOrDefault();
+        }
+
+        public List<Storages_tbl> GetStorageByRoom(int roomID)
+        {
+            return db.Storages_tbl.Where(store => store.ROOM_ID == roomID).ToList();
+        }
+
+        public List<Storages_tbl> GetStorages(int storageId)
+        {
+            return db.Storages_tbl.Where(storage => storage.ROOM_ID == storageId).ToList();
         }
 
         public List<Storages_tbl> GetStoragesByFillter(string parameter)

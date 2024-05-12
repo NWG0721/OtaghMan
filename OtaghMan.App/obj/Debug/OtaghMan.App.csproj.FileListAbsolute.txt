@@ -26,3 +26,4 @@ Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.App\obj\Debug\OtaghMan.App
 Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.App\obj\Debug\OtaghMan.App.Forms.frmStorages.resources
 Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.App\obj\Debug\OtaghMan.App.frmClickRightForStorageAndEquip.resources
 Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.App\obj\Debug\OtaghMan.App.frmAddStorage.resources
+Z:\Programs\c#\In Progress Projects\OtaghMan\OtaghMan.App\obj\Debug\OtaghMan.App.Forms.frmAddEquip.resources

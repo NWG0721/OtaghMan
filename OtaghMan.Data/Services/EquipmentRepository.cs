@@ -56,6 +56,11 @@ namespace OtaghMan.Data.Services
             }
         }
 
+        public List<Equipment_tbl> FindEquipmentByStorageID(int storageId)
+        {
+            return db.Equipment_tbl.Where(equip=> equip.EQUIPMENT_STORAGE == storageId).ToList();
+        }
+
         public List<Equipment_tbl> GetAllEquipment()
         {
             return db.Equipment_tbl.ToList();
@@ -66,9 +71,9 @@ namespace OtaghMan.Data.Services
             return db.Equipment_tbl.Find(Equipmentid);
         }
 
-        public void SaveChanges()
+        public List<Equipment_tbl> GetTheActualEquipments(int storageId, int userID)
         {
-            db.SaveChanges();
+            return db.Equipment_tbl.Where(equip => equip.EQUIPMENT_STORAGE == storageId && equip.EQUIPMENT_OWNER == userID).ToList();
         }
 
         public bool UpdateEquipmentInfo(Equipment_tbl equipment)

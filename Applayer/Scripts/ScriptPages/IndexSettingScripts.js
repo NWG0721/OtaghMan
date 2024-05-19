@@ -1,20 +1,28 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const fullscreenButton = document.getElementById("fullscreenButton");
-
-    fullscreenButton.addEventListener("click", function() {
-        if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-            document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElsement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            document.documentElement.webkitRequestFullscreen();
-        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-            document.documentElement.msRequestFullscreen();
-        }
-    });
-
-    // Trigger full screen automatically after page load (requires user interaction)
-    setTimeout(() => {
-        fullscreenButton.click();
-    }, 1000); // Adjust the timeout if necessary
-});
+let eyeSymbol = document.getElementById("EyeSymbol");
+let userPassWord = document.getElementById("UserPassWord");
+let eyeStatus = false;
+function EyeSymbolControleStartUp() {
+  eyeSymbol.src = "./Sources/Pictures/icons8-view-48.png";
+  setTimeout(() => {
+    eyeSymbol.src = "./Sources/Pictures/icons8-hide-48.png";
+  }, 2000);
+  setTimeout(() => {
+    eyeSymbol.src = "./Sources/Pictures/icons8-view-48.png";
+  }, 2100);
+  setTimeout(() => {
+    eyeSymbol.src = "./Sources/Pictures/icons8-hide-48.png";
+  }, 3200);
+  setTimeout(() => {
+    eyeSymbol.src = "./Sources/Pictures/icons8-view-48.png";
+  }, 3300);
+}
+function EyeSymbolControleOnClick() {
+  if (eyeStatus) {
+    eyeSymbol.src = "./Sources/Pictures/icons8-view-48.png";
+    userPassWord.type = "password";
+} else {
+    eyeSymbol.src = "./Sources/Pictures/icons8-hide-48.png";
+    userPassWord.type = "text";
+  }
+  eyeStatus = !eyeStatus;
+}

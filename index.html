@@ -10,6 +10,7 @@
   <body
     dir="rtl"
     class="contaner m-0 p-0 h-screen bg-BackgroundColorBack grid grid-rows-9 grid-cols-12"
+    onload="EyeSymbolControleStartUp()"
   >
     <!--------------------| Form |-------------------->
 
@@ -27,11 +28,15 @@
         </select>
       </div>
       <div class="row-start-5 row-end-6 col-start-4 col-end-7 flex flex-col justify-center align-middle">
-        <input type="password" name="" id="" class="w-fix rounded-lg text-center text-FontColor-zero h-10">
+        <label for="UserPassWord" class="text-center text-xl text-FontColor-three">کاربر</label><br>
+        <div class="flex flex-row justify-around align-middle">
+          <input required type="password" name="UserPassWord" id="UserPassWord" class="w-fix rounded-lg text-center text-FontColor-zero h-10">
+          <img src="./Sources/Pictures/icons8-view-48.png" alt="" class="scale-[1] hue-rotate-90" id="EyeSymbol" onclick="EyeSymbolControleOnClick()">
+        </div>
       </div >
       <button
         type="submit"
-        class="bg-ForgroundColorFront rounded-2xl row-start-8 row-end-9 col-start-4 col-end-7 text-FontColor-two text-xl hover:scale-105"
+        class="bg-ForgroundColorFront rounded-2xl row-start-8 row-end-9 col-start-4 col-end-7 text-FontColor-two text-xl hover:scale-105 shadow-xl"
       >
         Enter
       </button>

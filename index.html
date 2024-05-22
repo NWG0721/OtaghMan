@@ -16,25 +16,51 @@
     <!--------------------| Form |-------------------->
 
     <form
-      action=""
+      action="./Applayer/Scripts/ProcessorUnit/DataGetter.js"
       class="col-start-4 col-end-10 row-start-2 row-end-8 bg-BackgroundColorFront rounded-[40px] shadow-2xl animate__animated animate__fadeInDown animate_opacity grid grid-rows-9 grid-cols-9"
     >
-      <div class="row-start-3 row-end-5 col-start-4 col-end-7 flex flex-col justify-center align-middle">
-        <label for="SelectUser" class="text-center text-xl text-FontColor-three">کاربر</label><br>
-        <select name="SelectUser" id="SelectUser" class="w-fix rounded-lg text-center text-FontColor-zero h-10">
+      <div
+        class="row-start-3 row-end-5 col-start-4 col-end-7 flex flex-col justify-center align-middle"
+      >
+        <label for="SelectUser" class="text-center text-xl text-FontColor-three"
+          >کاربر</label
+        ><br />
+        <select
+          name="SelectUser"
+          id="SelectUser"
+          class="w-fix rounded-lg text-center text-FontColor-zero h-10"
+        >
           <option value="1">آرمین</option>
           <option value="2">مهرداد</option>
           <option value="3">نغمه</option>
           <option value="4" selected>نیما</option>
         </select>
       </div>
-      <div class="row-start-5 row-end-6 col-start-4 col-end-7 flex flex-col justify-center align-middle">
-        <label for="UserPassWord" class="text-center text-xl text-FontColor-three">کاربر</label><br>
+      <div
+        class="row-start-5 row-end-6 col-start-4 col-end-7 flex flex-col justify-center align-middle"
+      >
+        <label
+          for="UserPassWord"
+          class="text-center text-xl text-FontColor-three"
+          >کاربر</label
+        ><br />
         <div class="flex flex-row justify-around align-middle">
-          <input required type="password" name="UserPassWord" id="UserPassWord" class="w-fix rounded-lg text-center text-FontColor-zero h-10">
-          <img src="./Sources/Pictures/icons8-view-48.png" alt="" class="scale-[1] hue-rotate-90" id="EyeSymbol" onclick="EyeSymbolControleOnClick()">
+          <input
+            required
+            type="password"
+            name="UserPassWord"
+            id="UserPassWord"
+            class="w-fix rounded-lg text-center text-FontColor-zero h-10"
+          />
+          <img
+            src="./Sources/Pictures/icons8-view-48.png"
+            alt=""
+            class="scale-[1] hue-rotate-90"
+            id="EyeSymbol"
+            onclick="EyeSymbolControleOnClick()"
+          />
         </div>
-      </div >
+      </div>
       <button
         type="submit"
         class="bg-ForgroundColorFront rounded-2xl row-start-8 row-end-9 col-start-4 col-end-7 text-FontColor-two text-xl hover:scale-105 shadow-xl"

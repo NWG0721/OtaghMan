@@ -15,11 +15,13 @@ namespace OtaghMan.App
     public partial class frmClickRightForStorageAndEquip : Form
     {
         int index;
+        int roomID;
         StorageUnit db;
-        public frmClickRightForStorageAndEquip(int index)
+        public frmClickRightForStorageAndEquip(int index, int roomID)
         {
             InitializeComponent();
             this.index = index;
+            this.roomID = roomID;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -42,10 +44,11 @@ namespace OtaghMan.App
 
         private void altoButton1_Click(object sender, EventArgs e)
         {
+            db = new StorageUnit();
             Storages_tbl storages = new Storages_tbl()
             {
                 STORAGE_ID = index,
-
+                ROOM_ID = roomID,
                 STORAGE_NAME = txtStorageOrEquipmentName.Text,
             };
             bool isChange = db.StorageRepository.UpdateStorageInfo(storages);

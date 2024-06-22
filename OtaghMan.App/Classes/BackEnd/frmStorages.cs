@@ -152,7 +152,8 @@ namespace OtaghMan.App.Forms
             btnEquipEdit.StrokeColor = System.Drawing.Color.Peru;
             btnEquipEdit.TabIndex = 20;
             btnEquipEdit.Text = "تصحیح";
-            btnEquipEdit.Transparency = false;
+            btnEquipEdit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnEquipEdit_MouseClick);
+
             // 
             // btnDeleteEquip
             // 
@@ -174,6 +175,7 @@ namespace OtaghMan.App.Forms
             btnDeleteEquip.TabIndex = 21;
             btnDeleteEquip.Text = "پاکیدن";
             btnDeleteEquip.Transparency = false;
+            btnDeleteEquip.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDeleteEquip_MouseClick);
             // 
             // txtEquipOwner
             // 

@@ -34,7 +34,7 @@ namespace OtaghMan.Data.Services
             try
             {
                 var storage = GetEquipmentByID(equipmentId);
-                DeleteEquipment(equipmentId);
+                DeleteEquipment(storage);
                 return true;
             }
             catch (Exception)

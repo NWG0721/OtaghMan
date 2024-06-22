@@ -19,18 +19,21 @@ namespace OtaghMan.App.Forms
         int equipID;
         public frmAddEquip(int roomID, int equipID)
         {
+            InitializeComponent();
             EquipmentUnit db = new EquipmentUnit();
             this.roomID = roomID;
             this.equipID = equipID;
-            if (equipID != 0)
+            if (equipID > 0)
             {
-                var res = db.EquipmentRepository.GetEquipmentByID(equipID);
+                Equipment_tbl res = new Equipment_tbl();
+                res = db.EquipmentRepository.GetEquipmentByID(equipID);
+
                 txtEquipName.Text = res.EQUIPMENT_NAME;
+
                 comboEquipOwner.SelectedItem = res.EQUIPMENT_OWNER;
                 comboStorageName.SelectedItem = res.EQUIPMENT_STORAGE;
                 finalPath = res.EQUIPMENT_PIC;
             }
-            InitializeComponent();
         }
 
         UsersUnit UU = new UsersUnit();
@@ -70,6 +73,7 @@ namespace OtaghMan.App.Forms
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            bool isOK= false;
                 EquipmentUnit db = new EquipmentUnit();
             Equipment_tbl equipment_Tbl;
             if (equipID != 0)
@@ -81,7 +85,7 @@ namespace OtaghMan.App.Forms
                     EQUIPMENT_STORAGE = SU.StorageRepository.GetStorageByName(comboStorageName.SelectedItem.ToString(), roomID).STORAGE_ID,
                     EQUIPMENT_PIC = finalPath
                 };
-                db.EquipmentRepository.UpdateEquipmentInfo(equipment_Tbl);
+              isOK =   db.EquipmentRepository.UpdateEquipmentInfo(equipment_Tbl);
             }
             else
             {
@@ -93,10 +97,18 @@ namespace OtaghMan.App.Forms
                     EQUIPMENT_PIC = finalPath
                 };
 
-                db.EquipmentRepository.AddEquipment(equipment_Tbl);
+               isOK =  db.EquipmentRepository.AddEquipment(equipment_Tbl);
             }
                 db.SaveChanges();
-                db.Dispose();
+            if (isOK)
+            {
+                MessageBox.Show("عملیات موفق بود");
+            }
+           else
+            {
+                MessageBox.Show("عملیات موفق نبود");
+            }
+            db.Dispose();
 
         }
     }

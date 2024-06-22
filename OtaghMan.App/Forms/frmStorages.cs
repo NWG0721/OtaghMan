@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using WiLBiT;
 
@@ -54,6 +55,7 @@ namespace OtaghMan.App.Forms
         //
 
         public int index = 0;
+        int equipID = 0;
         string roomName;
         int roomID;
         int userID;
@@ -92,20 +94,30 @@ namespace OtaghMan.App.Forms
                     return index;
 
                 }
+                else
+                {
+
+                    return -1;
+
+                }
+            }
+            else
+            {
+
+                return -1;
 
             }
-
-            return -1;
-
         }
         private void panStorage_MouseClick(object sender, MouseEventArgs e)
         {
             db = new StorageUnit();
             WiLBiTPanel panel = sender as WiLBiTPanel;
+
             index = GetIndexFromPanelName(panel.Name, "panStorage_");
+
             if (e.Button == MouseButtons.Right)
             {
-                frmClickRightForStorageAndEquip fCRFSAE = new frmClickRightForStorageAndEquip(index);
+                frmClickRightForStorageAndEquip fCRFSAE = new frmClickRightForStorageAndEquip(index, roomID);
 
                 fCRFSAE.ShowDialog();
                 if (fCRFSAE.DialogResult == DialogResult.OK)
@@ -119,7 +131,9 @@ namespace OtaghMan.App.Forms
                 lblStorageName.Text = db.StorageRepository.GetStorageByID(index).STORAGE_NAME;
                 equipmentUnit.EquipmentRepository.GetTheActualEquipments(index, userID);
                 equipmentUnit.Dispose();
+                SlideCaller(index);
             }
+            CartCaller();
         }
 
         private void frmStorages_Load(object sender, EventArgs e)
@@ -132,10 +146,7 @@ namespace OtaghMan.App.Forms
         {
             frmAddStorage AddStorage = new frmAddStorage(roomID);
             AddStorage.ShowDialog();
-            if (AddStorage.DialogResult == DialogResult.OK)
-            {
-                CartCaller();
-            }
+            CartCaller();
         }
 
         private void altoButton3_Click(object sender, EventArgs e)
@@ -152,8 +163,9 @@ namespace OtaghMan.App.Forms
 
         private void btnAddNewEquip_Click(object sender, EventArgs e)
         {
-            addEquip = new frmAddEquip(roomID,0);
+            addEquip = new frmAddEquip(roomID, 0);
             addEquip.ShowDialog();
+            SlideCaller(index);
         }
 
         private void altoButton2_Click(object sender, EventArgs e)
@@ -163,20 +175,31 @@ namespace OtaghMan.App.Forms
 
         private void btnDeleteEquip_MouseClick(object sender, MouseEventArgs e)
         {
-            Button button = sender as Button;
+            AltoControls.AltoButton button = sender as AltoControls.AltoButton;
             equipmentUnit = new EquipmentUnit();
-            GetIndexFromPanelName(button.Name, "btnDeleteEquip");
-            index = 0;
+            equipID = GetIndexFromPanelName(button.Name, "btnDeleteEquip");
+            bool isOk = equipmentUnit.EquipmentRepository.DeleteEquipment(equipID);
+            if (isOk)
+            {
+                equipmentUnit.Dispose();
+                index = 0;
+                SlideCaller(index);
+            }
 
         }
 
         private void btnEquipEdit_MouseClick(object sender, MouseEventArgs e)
         {
-            Button button = sender as Button;
+            AltoControls.AltoButton button = sender as AltoControls.AltoButton;
             equipmentUnit = new EquipmentUnit();
             addEquip = new frmAddEquip(roomID, GetIndexFromPanelName(button.Name, "btnEquipEdit"));
             index = 0;
             addEquip.ShowDialog();
+            equipmentUnit.Dispose();
+        }
+
+        private void btnEquipEdit_Click(object sender, EventArgs e)
+        {
 
         }
     }

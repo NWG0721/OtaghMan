@@ -112,6 +112,10 @@ namespace OtaghMan.App
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            Refresh();
+        }
+
+        private void Refresh() {
             CartCaller();
         }
 
@@ -119,11 +123,12 @@ namespace OtaghMan.App
         {
             frmAddEditRoom frmAdd = new frmAddEditRoom();
             frmAdd.ShowDialog();
+            Refresh();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            CartCaller();
+            Refresh();
         }
         
 
@@ -191,8 +196,9 @@ namespace OtaghMan.App
                 manage.Show();
                 if (manage.DialogResult == DialogResult.Yes)
                 {
-                    CartCaller();
+                    Refresh();
                     MessageBox.Show("OK");
+                    Refresh();
                 }
             }
         }
